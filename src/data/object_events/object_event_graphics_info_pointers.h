@@ -502,12 +502,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
-    [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
-    [OBJ_EVENT_GFX_DAISY] =                    &gObjectEventGraphicsInfo_Daisy,
-    [OBJ_EVENT_GFX_KANTO_CLERK] =              &gObjectEventGraphicsInfo_KantoClerk,
     [OBJ_EVENT_GFX_PROF_OAK] =                 &gObjectEventGraphicsInfo_ProfOak,
     [OBJ_EVENT_GFX_KANTO_TOWN_MAP] =           &gObjectEventGraphicsInfo_KantoTownMap,
+    [OBJ_EVENT_GFX_DAISY] =                    &gObjectEventGraphicsInfo_Daisy,
+    [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
     [OBJ_EVENT_GFX_POKEDEX] =                  &gObjectEventGraphicsInfo_Pokedex,
+    [OBJ_EVENT_GFX_KANTO_CLERK] =              &gObjectEventGraphicsInfo_KantoClerk,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
