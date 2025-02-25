@@ -117,6 +117,10 @@
 #define METATILE_Building_TV_Off  0x002
 #define METATILE_Building_TV_On   0x003
 
+// gTileset_BuildingKanto
+#define METATILE_BuildingKanto_PCOff  0x062
+#define METATILE_BuildingKanto_PCOn   0x063
+
 // gTileset_Cave
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
@@ -248,6 +252,9 @@
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
+
+// gTileset_GenericBuildingKanto1
+#define METATILE_GenericBuildingKanto1_PlayersPCOff  0x28F
 
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
