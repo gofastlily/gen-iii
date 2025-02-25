@@ -243,8 +243,14 @@
 #define MB_UNUSED_EF 0xEF
 
 #define MB_WARP_DOOR 0xF0
+#define MB_DRESSER 0xF1
+#define MB_KITCHEN 0xF2
+#define MB_CABINET 0xF3
+#define MB_CAVE_DOOR 0xF4
+#define MB_COMPUTER 0xF5
+#define MB_CUP 0xF6
 
-#define NUM_METATILE_BEHAVIORS 0xF1
+#define NUM_METATILE_BEHAVIORS 0xF7
 
 #define MB_INVALID   0xFF
 
