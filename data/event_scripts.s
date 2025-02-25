@@ -1155,9 +1155,14 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 
+EventScript_Return::
+	return
+
 	.include "data/maps/PalletTown/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_1F/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_2F/scripts.inc"
 	.include "data/maps/PalletTown_RivalsHouse/scripts.inc"
 	.include "data/maps/PalletTown_ProfessorOaksLab/scripts.inc"
 
+	.include "data/text/sign_lady.inc"
+	.include "data/maps/PalletTown/text.inc"
