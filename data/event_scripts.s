@@ -1158,11 +1158,19 @@ EventScript_VsSeekerChargingDone::
 EventScript_Return::
 	return
 
-	.include "data/maps/PalletTown/scripts.inc"
-	.include "data/maps/PalletTown_PlayersHouse_1F/scripts.inc"
-	.include "data/maps/PalletTown_PlayersHouse_2F/scripts.inc"
-	.include "data/maps/PalletTown_RivalsHouse/scripts.inc"
-	.include "data/maps/PalletTown_ProfessorOaksLab/scripts.inc"
+Text_PlayerBootedUpPC::
+	.string "{PLAYER} booted up the PC.$"
 
-	.include "data/text/sign_lady.inc"
+	.include "data/maps/PalletTown/scripts.inc"
 	.include "data/maps/PalletTown/text.inc"
+	.include "data/text/sign_lady.inc"
+
+	.include "data/maps/PalletTown_PlayersHouse_1F/scripts.inc"
+	.include "data/maps/PalletTown_PlayersHouse_1F/text.inc"
+	
+	.include "data/maps/PalletTown_PlayersHouse_2F/scripts.inc"
+	.include "data/maps/PalletTown_PlayersHouse_2F/text.inc"
+
+	.include "data/maps/PalletTown_RivalsHouse/scripts.inc"
+
+	.include "data/maps/PalletTown_ProfessorOaksLab/scripts.inc"
