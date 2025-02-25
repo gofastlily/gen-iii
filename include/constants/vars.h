@@ -274,7 +274,12 @@
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
-#define VARS_END                                         0x40FF
+// Kanto vars
+#define VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY              0x40F7
+#define VAR_MAP_SCENE_PALLET_TOWN_OAK                    0x40F8
+#define VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB     0x40F9
+
+#define VARS_END                                         0x40F9
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
 
 #define SPECIAL_VARS_START            0x8000
