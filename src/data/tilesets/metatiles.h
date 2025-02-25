@@ -213,3 +213,12 @@ const u16 gMetatileAttributes_GeneralKanto[] = INCBIN_U16("data/tilesets/primary
 
 const u16 gMetatiles_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town/metatiles.bin");
 const u16 gMetatileAttributes_PalletTown[] = INCBIN_U16("data/tilesets/secondary/pallet_town/metatile_attributes.bin");
+
+const u16 gMetatiles_BuildingKanto[] = INCBIN_U16("data/tilesets/primary/building_kanto/metatiles.bin");
+const u16 gMetatileAttributes_BuildingKanto[] = INCBIN_U16("data/tilesets/primary/building_kanto/metatile_attributes.bin");
+
+const u16 gMetatiles_GenericBuildingKanto1[] = INCBIN_U16("data/tilesets/secondary/generic_building_kanto_1/metatiles.bin");
+const u16 gMetatileAttributes_GenericBuildingKanto1[] = INCBIN_U16("data/tilesets/secondary/generic_building_kanto_1/metatile_attributes.bin");
+
+const u16 gMetatiles_OaksLab[] = INCBIN_U16("data/tilesets/secondary/oaks_lab/metatiles.bin");
+const u16 gMetatileAttributes_OaksLab[] = INCBIN_U16("data/tilesets/secondary/oaks_lab/metatile_attributes.bin");
