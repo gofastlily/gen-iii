@@ -1187,3 +1187,13 @@ Text_PlayerBootedUpPC::
 
 	.include "data/maps/PalletTown_ProfessorOaksLab/scripts.inc"
 	.include "data/maps/PalletTown_ProfessorOaksLab/text.inc"
+
+@@@
+@ Kanto Routes
+@
+
+	.include "data/maps/Route1/scripts.inc"
+	.include "data/maps/Route1/text.inc"
+
+	.include "data/maps/Route21_North/scripts.inc"
+	.include "data/maps/Route21_North/text.inc"

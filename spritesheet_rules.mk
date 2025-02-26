@@ -4933,6 +4933,9 @@ $(OBJEVENTGFXDIR)/people/blue.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/daisy.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/kanto_clerk.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/prof_oak.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

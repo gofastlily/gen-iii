@@ -4460,6 +4460,26 @@
       "secondary_tileset": "gTileset_OaksLab",
       "border_filepath": "data/layouts/PalletTown_ProfessorOaksLab/border.bin",
       "blockdata_filepath": "data/layouts/PalletTown_ProfessorOaksLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1",
+      "name": "Route1_Layout",
+      "width": 24,
+      "height": 40,
+      "primary_tileset": "gTileset_GeneralKanto",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/Route1/border.bin",
+      "blockdata_filepath": "data/layouts/Route1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE21_NORTH",
+      "name": "Route21_North_Layout",
+      "width": 24,
+      "height": 50,
+      "primary_tileset": "gTileset_GeneralKanto",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/Route21_North/border.bin",
+      "blockdata_filepath": "data/layouts/Route21_North/map.bin"
     }
   ]
 }
