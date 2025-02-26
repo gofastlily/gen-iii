@@ -468,8 +468,6 @@ const u16 gObjectEventPic_Blue[] = INCBIN_U16("graphics/object_events/pics/peopl
 const u16 gObjectEventPic_Daisy[] = INCBIN_U16("graphics/object_events/pics/people/daisy.4bpp");
 const u16 gObjectEventPic_KantoClerk[] = INCBIN_U16("graphics/object_events/pics/people/kanto_clerk.4bpp");
 const u16 gObjectEventPic_ProfOak[] = INCBIN_U16("graphics/object_events/pics/people/prof_oak.4bpp");
-const u16 gObjectEventPic_Daisy[] = INCBIN_U16("graphics/object_events/pics/people/daisy.4bpp");
-const u16 gObjectEventPic_KantoTownMap[] = INCBIN_U16("graphics/object_events/pics/misc/kanto_town_map.4bpp");
 
 // Kanto misc
 const u16 gObjectEventPic_KantoTownMap[] = INCBIN_U16("graphics/object_events/pics/misc/kanto_town_map.4bpp");
