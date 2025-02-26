@@ -668,6 +668,7 @@
 #define FLAG_HIDE_OAK_IN_HIS_LAB                    0x268
 #define FLAG_BEAT_RIVAL_IN_OAKS_LAB                 0x269
 #define FLAG_HIDE_KANTO_TOWN_MAP                    0x26A
+<<<<<<< HEAD
 #define FLAG_HIDE_BULBASAUR_BALL                    0x26B
 #define FLAG_HIDE_CHARMANDER_BALL                   0x26C
 #define FLAG_HIDE_SQUIRTLE_BALL                     0x26D
@@ -681,6 +682,21 @@
 #define FLAG_GOT_POTION_ON_ROUTE_1                  0x275
 #define FLAG_HIDDEN_ITEM_ROUTE21_NORTH_PEARL        0x276
 
+=======
+
+#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
+#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
+#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
+#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
+#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
+#define FLAG_UNUSED_0x270  0x270 // Unused Flag
+#define FLAG_UNUSED_0x271  0x271 // Unused Flag
+#define FLAG_UNUSED_0x272  0x272 // Unused Flag
+#define FLAG_UNUSED_0x273  0x273 // Unused Flag
+#define FLAG_UNUSED_0x274  0x274 // Unused Flag
+#define FLAG_UNUSED_0x275  0x275 // Unused Flag
+#define FLAG_UNUSED_0x276  0x276 // Unused Flag
+>>>>>>> de69b9a8d9 (Rival's house scripts, objects, and signs, and fix Pallet Town metatiles)
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
