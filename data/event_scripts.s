@@ -1170,5 +1170,6 @@ Text_PlayerBootedUpPC::
 	.include "data/maps/PalletTown_PlayersHouse_2F/text.inc"
 
 	.include "data/maps/PalletTown_RivalsHouse/scripts.inc"
+	.include "data/maps/PalletTown_RivalsHouse/text.inc"
 
 	.include "data/maps/PalletTown_ProfessorOaksLab/scripts.inc"
