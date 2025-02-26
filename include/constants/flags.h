@@ -674,9 +674,9 @@
 #define FLAG_OAK_SKIP_22_RIVAL_CHECK                0x272
 #define FLAG_OAK_SAW_DEX_COMPLETION                 0x273
 #define FLAG_OAKS_RATING_IS_VIA_PC                  0x274
+#define FLAG_GOT_POTION_ON_ROUTE_1                  0x275
+#define FLAG_HIDDEN_ITEM_ROUTE21_NORTH_PEARL        0x276
 
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag

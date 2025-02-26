@@ -458,6 +458,7 @@ const u16 gObjectEventPal_StrangeBall[] = INCBIN_U16("graphics/object_events/pic
 // Kanto people
 const u16 gObjectEventPic_Blue[] = INCBIN_U16("graphics/object_events/pics/people/blue.4bpp");
 const u16 gObjectEventPic_Daisy[] = INCBIN_U16("graphics/object_events/pics/people/daisy.4bpp");
+const u16 gObjectEventPic_KantoClerk[] = INCBIN_U16("graphics/object_events/pics/people/kanto_clerk.4bpp");
 const u16 gObjectEventPic_ProfOak[] = INCBIN_U16("graphics/object_events/pics/people/prof_oak.4bpp");
 
 // Kanto misc
