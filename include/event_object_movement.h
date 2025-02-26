@@ -108,6 +108,7 @@ struct LockedAnimObjectEvents
 };
 
 extern const struct OamData gObjectEventBaseOam_32x8;
+extern const struct OamData gObjectEventBaseOam_32x16;
 extern const struct OamData gObjectEventBaseOam_32x32;
 extern const struct OamData gObjectEventBaseOam_64x64;
 extern const struct SubspriteTable sOamTables_32x32[];
