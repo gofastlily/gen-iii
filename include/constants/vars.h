@@ -279,8 +279,10 @@
 #define VAR_MAP_SCENE_PALLET_TOWN_OAK                    0x40F8
 #define VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB     0x40F9
 #define VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F       0x40FA
+#define VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE           0x40FB
+#define VAR_MASSAGE_COOLDOWN_STEP_COUNTER                0x40FC
 
-#define VARS_END                                         0x40FA
+#define VARS_END                                         0x40FC
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
 
 #define SPECIAL_VARS_START            0x8000
