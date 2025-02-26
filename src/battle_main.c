@@ -4112,6 +4112,11 @@ u8 IsRunningFromBattleImpossible(u32 battler)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DONT_LEAVE_BIRCH;
         return BATTLE_RUN_FORBIDDEN;
     }
+    if (gBattleTypeFlags & BATTLE_TYPE_KANTO_FIRST_BATTLE) // Cannot run from the first Kanto rival battle
+    {
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
+        return BATTLE_RUN_FORBIDDEN;
+    }
     if (GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT && WILD_DOUBLE_BATTLE
         && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT))) // The second pokemon cannot run from a double wild battle, unless it's the only alive mon.
     {
@@ -5499,6 +5504,18 @@ static void HandleEndTurn_BattleLost(void)
     }
     else
     {
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && GetTrainerBattleMode() == 14) // TRAINER_BATTLE_EARLY_RIVAL
+        {
+            if (GetRivalBattleFlags() & RIVAL_BATTLE_HEAL_AFTER)
+                gBattleCommunication[MULTISTRING_CHOOSER] = 1; // Dont do white out text
+            else
+                gBattleCommunication[MULTISTRING_CHOOSER] = 2; // Do white out text
+            gBattlerAttacker = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+        }
+        else
+        {
+            gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+        }
         gBattlescriptCurrInstr = BattleScript_LocalBattleLost;
     }
 
@@ -5561,7 +5578,8 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_SAFARI
                                   | BATTLE_TYPE_EREADER_TRAINER
                                   | BATTLE_TYPE_WALLY_TUTORIAL
-                                  | BATTLE_TYPE_FRONTIER)))
+                                  | BATTLE_TYPE_FRONTIER
+                                  | BATTLE_TYPE_KANTO_FIRST_BATTLE)))
         {
             for (battler = 0; battler < gBattlersCount; battler++)
             {

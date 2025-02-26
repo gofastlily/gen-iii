@@ -2017,7 +2017,7 @@ static void Cmd_critcalc(void)
 
     gPotentialItemEffectBattler = gBattlerAttacker;
 
-    if (gBattleTypeFlags & (BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE))
+    if (gBattleTypeFlags & (BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_KANTO_FIRST_BATTLE))
         gIsCriticalHit = FALSE;
     else if (critChance == -1)
         gIsCriticalHit = FALSE;
