@@ -2513,3 +2513,8 @@
 	compare \a, \b
 	cant_see_if 5
 	.endm
+
+	@ Starts a trainer battle, skipping intro text. Takes a trainer and loss text
+	.macro trainerbattle_kanto_rival trainer:req, defeat_text:req, victory_text:req
+	trainerbattle TRAINER_BATTLE_EARLY_RIVAL, OBJ_ID_NONE, \trainer, NULL, \defeat_text, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, \victory_text, FALSE, TRUE, FALSE, FALSE
+	.endm

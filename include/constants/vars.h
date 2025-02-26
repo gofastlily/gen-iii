@@ -264,15 +264,6 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 // Kanto vars
 #define VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY              0x40F7
@@ -281,8 +272,14 @@
 #define VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F       0x40FA
 #define VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE           0x40FB
 #define VAR_MASSAGE_COOLDOWN_STEP_COUNTER                0x40FC
+#define VAR_KANTO_STARTER_MON                            0x40FD // 0: Bulbasaur, 1: Squirtle, 2: Charmander
+#define VAR_MAP_SCENE_ROUTE22                            0x40FE
+#define VAR_MAP_SCENE_POKEMON_CENTER_TEALA               0x40FF
+#define VAR_MAP_SCENE_CERULEAN_CITY_RIVAL                0x4100
+#define VAR_MAP_SCENE_VIRIDIAN_CITY_MART                 0x4101
+#define VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN              0x4102
 
-#define VARS_END                                         0x40FC
+#define VARS_END                                         0x4102
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
 
 #define SPECIAL_VARS_START            0x8000

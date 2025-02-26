@@ -42178,3 +42178,93 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16882
+    [DIFFICULTY_NORMAL][TRAINER_RIVAL_OAKS_LAB_SQUIRTLE] =
+    {
+#line 16883
+        .trainerName = _("BLUE"),
+#line 16884
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 16885
+        .trainerPic = TRAINER_PIC_KANTO_RIVAL_EARLY,
+        .encounterMusic_gender =
+#line 16887
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16888
+        .doubleBattle = FALSE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16890
+            .species = SPECIES_SQUIRTLE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16892
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16891
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
+#line 16894
+    [DIFFICULTY_NORMAL][TRAINER_RIVAL_OAKS_LAB_BULBASAUR] =
+    {
+#line 16895
+        .trainerName = _("BLUE"),
+#line 16896
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 16897
+        .trainerPic = TRAINER_PIC_KANTO_RIVAL_EARLY,
+        .encounterMusic_gender =
+#line 16899
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16900
+        .doubleBattle = FALSE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16902
+            .species = SPECIES_BULBASAUR,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16904
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16903
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
+#line 16906
+    [DIFFICULTY_NORMAL][TRAINER_RIVAL_OAKS_LAB_CHARMANDER] =
+    {
+#line 16907
+        .trainerName = _("BLUE"),
+#line 16908
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 16909
+        .trainerPic = TRAINER_PIC_KANTO_RIVAL_EARLY,
+        .encounterMusic_gender =
+#line 16911
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16912
+        .doubleBattle = FALSE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16914
+            .species = SPECIES_CHARMANDER,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16916
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16915
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
