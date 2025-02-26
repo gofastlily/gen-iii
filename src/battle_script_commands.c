@@ -1974,7 +1974,7 @@ static void Cmd_critcalc(void)
         else
             gBattleStruct->critChance[battlerDef] = CalcCritChanceStage(gBattlerAttacker, gBattlerTarget, gCurrentMove, TRUE, abilityAtk, abilityDef, holdEffectAtk);
 
-        if (gBattleTypeFlags & (BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE))
+        if (gBattleTypeFlags & (BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_KANTO_FIRST_BATTLE))
             gSpecialStatuses[battlerDef].criticalHit = FALSE;
         else if (gBattleStruct->critChance[battlerDef] == -1)
             gSpecialStatuses[battlerDef].criticalHit = FALSE;

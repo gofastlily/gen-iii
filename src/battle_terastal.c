@@ -64,7 +64,7 @@ bool32 CanTerastallize(u32 battler)
     u32 holdEffect = GetBattlerHoldEffect(battler, FALSE);
 
     // Prevents Zigzagoon from terastalizing in vanilla.
-    if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE && GetBattlerSide(battler) == B_SIDE_OPPONENT)
+    if (((gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE) || (gBattleTypeFlags & BATTLE_TYPE_KANTO_FIRST_BATTLE)) && GetBattlerSide(battler) == B_SIDE_OPPONENT)
         return FALSE;
 
     if (TESTING || GetBattlerSide(battler) == B_SIDE_OPPONENT)

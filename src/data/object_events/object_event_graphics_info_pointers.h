@@ -248,10 +248,14 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giddy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 
-// Kanto event objects
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
+// Kanto people event objects
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Daisy;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
+
+// Kanto misc event objects
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoTownMap;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokedex;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -495,9 +499,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
-    [OBJ_EVENT_GFX_PROF_OAK] =                 &gObjectEventGraphicsInfo_ProfOak,
+    [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
     [OBJ_EVENT_GFX_DAISY] =                    &gObjectEventGraphicsInfo_Daisy,
+    [OBJ_EVENT_GFX_PROF_OAK] =                 &gObjectEventGraphicsInfo_ProfOak,
     [OBJ_EVENT_GFX_KANTO_TOWN_MAP] =           &gObjectEventGraphicsInfo_KantoTownMap,
+    [OBJ_EVENT_GFX_POKEDEX] =                  &gObjectEventGraphicsInfo_Pokedex,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
