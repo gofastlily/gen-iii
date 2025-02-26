@@ -663,8 +663,8 @@
 #define FLAG_WORLD_MAP_ONE_ISLAND                   0x267
 #define FLAG_HIDE_OAK_IN_HIS_LAB                    0x268
 #define FLAG_BEAT_RIVAL_IN_OAKS_LAB                 0x269
+#define FLAG_HIDE_KANTO_TOWN_MAP                    0x26A
 
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
 #define FLAG_UNUSED_0x26D  0x26D // Unused Flag
