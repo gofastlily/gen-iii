@@ -1153,12 +1153,23 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 
+@@@
+@ Kanto Helpers
+@
 EventScript_Return::
 	return
 
 Text_PlayerBootedUpPC::
 	.string "{PLAYER} booted up the PC.$"
 
+@@@
+@ Kanto Common
+@
+	.include "data/scripts/pokedex_rating.inc"
+
+@@@
+@ Pallet Town
+@
 	.include "data/maps/PalletTown/scripts.inc"
 	.include "data/maps/PalletTown/text.inc"
 	.include "data/text/sign_lady.inc"
@@ -1173,3 +1184,4 @@ Text_PlayerBootedUpPC::
 	.include "data/maps/PalletTown_RivalsHouse/text.inc"
 
 	.include "data/maps/PalletTown_ProfessorOaksLab/scripts.inc"
+	.include "data/maps/PalletTown_ProfessorOaksLab/text.inc"

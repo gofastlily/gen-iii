@@ -455,10 +455,14 @@ const u16 gObjectEventPal_StrangeBall[] = INCBIN_U16("graphics/object_events/pic
 #endif //ITEM_STRANGE_BALL
 #endif //OW_FOLLOWERS_POKEBALLS
 
-// Kanto pics
-const u16 gObjectEventPic_ProfOak[] = INCBIN_U16("graphics/object_events/pics/people/prof_oak.4bpp");
+// Kanto people
+const u16 gObjectEventPic_Blue[] = INCBIN_U16("graphics/object_events/pics/people/blue.4bpp");
 const u16 gObjectEventPic_Daisy[] = INCBIN_U16("graphics/object_events/pics/people/daisy.4bpp");
+const u16 gObjectEventPic_ProfOak[] = INCBIN_U16("graphics/object_events/pics/people/prof_oak.4bpp");
+
+// Kanto misc
 const u16 gObjectEventPic_KantoTownMap[] = INCBIN_U16("graphics/object_events/pics/misc/kanto_town_map.4bpp");
+const u16 gObjectEventPic_Pokedex[] = INCBIN_U16("graphics/object_events/pics/misc/pokedex.4bpp");
 
 // Kanto palettes
 const u16 gObjectEventPal_NpcWhite[] = INCBIN_U16("graphics/object_events/palettes/npc_white.gbapal");
