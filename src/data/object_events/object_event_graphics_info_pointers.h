@@ -252,6 +252,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvi
 // Kanto people event objects
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Daisy;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClerk;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
 
 // Kanto misc event objects
@@ -503,6 +504,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
     [OBJ_EVENT_GFX_DAISY] =                    &gObjectEventGraphicsInfo_Daisy,
+    [OBJ_EVENT_GFX_KANTO_CLERK] =              &gObjectEventGraphicsInfo_KantoClerk,
     [OBJ_EVENT_GFX_PROF_OAK] =                 &gObjectEventGraphicsInfo_ProfOak,
     [OBJ_EVENT_GFX_KANTO_TOWN_MAP] =           &gObjectEventGraphicsInfo_KantoTownMap,
     [OBJ_EVENT_GFX_POKEDEX] =                  &gObjectEventGraphicsInfo_Pokedex,

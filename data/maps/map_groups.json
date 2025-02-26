@@ -1,6 +1,6 @@
 {
   "group_order": [
-    "gMapGroup_TownsAndRoutes",
+    "gMapGroup_HoennTownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
     "gMapGroup_IndoorDewford",
@@ -24,9 +24,9 @@
     "gMapGroup_IndoorRoute116",
     "gMapGroup_IndoorRoute117",
     "gMapGroup_IndoorRoute121",
-    "gMapGroup_Dungeons",
-    "gMapGroup_IndoorDynamic",
-    "gMapGroup_SpecialArea",
+    "gMapGroup_HoennDungeons",
+    "gMapGroup_HoennIndoorDynamic",
+    "gMapGroup_HoennSpecialArea",
     "gMapGroup_IndoorRoute104Prototype",
     "gMapGroup_IndoorRoute109",
     "gMapGroup_IndoorRoute110",
@@ -34,9 +34,10 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
+    "gMapGroup_KantoTownsAndRoutes",
     "gMapGroup_IndoorPallet"
   ],
-  "gMapGroup_TownsAndRoutes": [
+  "gMapGroup_HoennTownsAndRoutes": [
     "PetalburgCity",
     "SlateportCity",
     "MauvilleCity",
@@ -93,8 +94,7 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125",
-    "PalletTown"
+    "Underwater_Route125"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -323,7 +323,7 @@
   "gMapGroup_IndoorRoute121": [
     "Route121_SafariZoneEntrance"
   ],
-  "gMapGroup_Dungeons": [
+  "gMapGroup_HoennDungeons": [
     "MeteorFalls_1F_1R",
     "MeteorFalls_1F_2R",
     "MeteorFalls_B1F_1R",
@@ -433,7 +433,7 @@
     "AlteringCave",
     "MeteorFalls_StevensCave"
   ],
-  "gMapGroup_IndoorDynamic": [
+  "gMapGroup_HoennIndoorDynamic": [
     "SecretBase_RedCave1",
     "SecretBase_BrownCave1",
     "SecretBase_BlueCave1",
@@ -496,7 +496,7 @@
     "BattlePyramidSquare16",
     "UnionRoom"
   ],
-  "gMapGroup_SpecialArea": [
+  "gMapGroup_HoennSpecialArea": [
     "SafariZone_Northwest",
     "SafariZone_North",
     "SafariZone_Southwest",
@@ -622,6 +622,11 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
+  ],
+  "gMapGroup_KantoTownsAndRoutes": [
+    "PalletTown",
+    "Route1",
+    "Route21_North"
   ],
   "gMapGroup_IndoorPallet": [
     "PalletTown_PlayersHouse_1F",
