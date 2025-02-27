@@ -63,24 +63,77 @@ struct BackupMapLayout
     u16 *map;
 };
 
+// #if MODERN
+
+// struct __attribute__((packed, aligned(4))) ObjectEventTemplate
+// {
+//     /*0x00*/ u8 localId;
+//     /*0x01*/ u16 graphicsId;
+//     /*0x03*/ u8 kind; // OBJ_KIND_NORMAL or OBJ_KIND_CLONE
+//     /*0x04*/ s16 x;
+//     /*0x06*/ s16 y;
+//     /*0x08*/ u8 elevation;
+//     union {
+//        struct { // OBJ_KIND_NORMAL
+//             /*0x09*/ u8 movementType;
+//             /*0x0A*/ u16 movementRangeX:4;
+//             /*0x0A*/ u16 movementRangeY:4;
+//             /*0x0B*/ u16 unused:8;
+//             /*0x0C*/ u16 trainerType;
+//         };
+//         struct { // OBJ_KIND_CLONE
+//             /*0x09*/ u8 targetLocalId;
+//             /*0x0A*/ u16 targetMapNum;
+//             /*0x0C*/ u16 targetMapGroup;
+//         }; 
+//     };
+//     /*0x0E*/ u16 trainerRange_berryTreeId;
+//     /*0x10*/ const u8 *script;
+//     /*0x14*/ u16 flagId;
+// };
+
+// #else 
+// C89 doesn't support anonymous structs, so to make it so we don't have to change EVERY instance
+// of ObjectEventTemplate to accomidate the clone object thing used TWICE, we'll just make an
+// alternate struct and cast between them.
+
 struct __attribute__((packed, aligned(4))) ObjectEventTemplate
 {
     /*0x00*/ u8 localId;
     /*0x01*/ u16 graphicsId;
-    /*0x03*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
+    /*0x03*/ u8 kind; // OBJ_KIND_NORMAL
     /*0x04*/ s16 x;
     /*0x06*/ s16 y;
     /*0x08*/ u8 elevation;
     /*0x09*/ u8 movementType;
     /*0x0A*/ u16 movementRangeX:4;
-             u16 movementRangeY:4;
-             u16 unused:8;
+    /*0x0A*/ u16 movementRangeY:4;
+    /*0x0B*/ u16 unused:8;
     /*0x0C*/ u16 trainerType;
     /*0x0E*/ u16 trainerRange_berryTreeId;
     /*0x10*/ const u8 *script;
     /*0x14*/ u16 flagId;
     /*0x16*/ u16 filler;
 }; // size = 0x18
+
+struct __attribute__((packed, aligned(4))) ObjectEventTemplate_Clone
+{
+    /*0x00*/ u8 localId;
+    /*0x01*/ u16 graphicsId;
+    /*0x03*/ u8 kind; // OBJ_KIND_CLONE
+    /*0x04*/ s16 x;
+    /*0x06*/ s16 y;
+    /*0x08*/ u8 elevation;
+    /*0x09*/ u8 targetLocalId;
+    /*0x0A*/ u16 targetMapNum;
+    /*0x0C*/ u16 targetMapGroup;
+    /*0x0E*/ u16 trainerRange_berryTreeId;
+    /*0x10*/ const u8 *script;
+    /*0x14*/ u16 flagId;
+    /*0x16*/ u16 filler;
+}; // size = 0x18
+
+// #endif
 
 struct WarpEvent
 {
