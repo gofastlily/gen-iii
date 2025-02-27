@@ -1409,16 +1409,33 @@ u8 GetObjectEventIdByLocalId(u8 localId)
 static u8 InitObjectEventStateFromTemplate(const struct ObjectEventTemplate *template, u8 mapNum, u8 mapGroup)
 {
     struct ObjectEvent *objectEvent;
+
+// #if MODERN
+//     const struct ObjectEventTemplate *cloneTemplate = template;
+// #else
+    const struct ObjectEventTemplate_Clone *cloneTemplate = (struct ObjectEventTemplate_Clone*)template;
+// #endif
+
     u8 objectEventId;
     s16 x;
     s16 y;
+    
+    if (template->kind == OBJ_KIND_CLONE) {
+        const struct MapHeader *mapHeader;
+        mapGroup = cloneTemplate->targetMapGroup;
+        mapNum = cloneTemplate->targetMapNum;
+        mapHeader = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
+        template = &(mapHeader->events->objectEvents[cloneTemplate->targetLocalId-1]);
+    }
 
     if (GetAvailableObjectEventId(template->localId, mapNum, mapGroup, &objectEventId))
         return OBJECT_EVENTS_COUNT;
     objectEvent = &gObjectEvents[objectEventId];
     ClearObjectEvent(objectEvent);
-    x = template->x + MAP_OFFSET;
-    y = template->y + MAP_OFFSET;
+    
+    x = cloneTemplate->x + MAP_OFFSET;
+    y = cloneTemplate->y + MAP_OFFSET;
+    
     objectEvent->active = TRUE;
     objectEvent->triggerGroundEffectsOnMove = TRUE;
     objectEvent->graphicsId = template->graphicsId;
@@ -1472,7 +1489,7 @@ u8 Unref_TryInitLocalObjectEvent(u8 localId)
         else if (InTrainerHill())
             objectEventCount = HILL_TRAINERS_PER_FLOOR;
         else
-            objectEventCount = gMapHeader.events->objectEventCount;
+            objectEventCount = gSaveBlock1Ptr->objectEventCount;
 
         for (i = 0; i < objectEventCount; i++)
         {
@@ -2742,7 +2759,7 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
         else if (InTrainerHill())
             objectCount = HILL_TRAINERS_PER_FLOOR;
         else
-            objectCount = gMapHeader.events->objectEventCount;
+            objectCount = gSaveBlock1Ptr->objectEventCount;
 
         for (i = 0; i < objectCount; i++)
         {
