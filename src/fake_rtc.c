@@ -72,9 +72,18 @@ void AdvanceScript(void)
 
 u32 FakeRtc_GetSecondsRatio(void)
 {
-    return (OW_ALTERED_TIME_RATIO == GEN_8_PLA) ? 60 :
-           (OW_ALTERED_TIME_RATIO == GEN_9)     ? 20 :
-                                                  1;
+    switch (OW_ALTERED_TIME_RATIO)
+    {
+        case GEN_8_PLA:
+            return 60;
+        case GEN_9:
+            return 20;
+        case GEN_III_STANDARD:
+            return 80;
+        case GEN_III_SLOW:
+            return 24;
+    }
+    return 1;
 }
 
 STATIC_ASSERT((OW_FLAG_PAUSE_TIME == 0 || OW_USE_FAKE_RTC == TRUE), FakeRtcMustBeTrueToPauseTime);

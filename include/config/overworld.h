@@ -83,10 +83,17 @@
 
 // These generational defines only make a distinction for OW_ALTERED_TIME_RATIO
 #define GEN_8_PLA                       GEN_LATEST + 2
+#define GEN_III_STANDARD                GEN_LATEST + 3
+#define GEN_III_SLOW                    GEN_LATEST + 4
 
 //Time
 #define OW_TIMES_OF_DAY                 GEN_LATEST   // Different generations have the times of day change at different times.
 #define OW_USE_FAKE_RTC                 FALSE        // When TRUE, seconds on the in-game clock will only advance once every 60 playTimeVBlanks (every 60 frames).
+#define OW_ALTERED_TIME_RATIO           GEN_III_STANDARD // This has no effect if OW_USE_FAKE_RTC is FALSE.
+                                                         // In GEN_8_PLA, the time in game moves forward 60 seconds for every second in the RTC.
+                                                         // In GEN_9, it is 20 seconds.
+                                                         // In GEN_III_STANDARD, it is 80 seconds.  This is based on the standard flow of time from Majora's Mask
+                                                         // In GEN_III_SLOW, it is 24 seconds.  This is based on the Inverted Song of Time from Majora's Mask
 #define OW_ALTERED_TIME_RATIO           GEN_LATEST   // In GEN_8_PLA, the time in game moves forward 60 seconds for every second in the RTC. In GEN_9, it is 20 seconds. This has no effect if OW_USE_FAKE_RTC is FALSE.
 #define OW_TIME_OF_DAY_ENCOUNTERS       FALSE        // If TRUE, will allow the user to define and use different encounter tables based on the time of day.
 #define OW_TIME_OF_DAY_DISABLE_FALLBACK FALSE        // If TRUE, if the encounter table for a specific map and time is empty, the area will have no encounters instead of falling back to the vanilla map and time.
