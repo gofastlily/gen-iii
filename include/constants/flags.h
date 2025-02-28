@@ -40,25 +40,25 @@
 #define FLAG_TEMP_1D     (TEMP_FLAGS_START + 0x1D)
 #define FLAG_TEMP_1E     (TEMP_FLAGS_START + 0x1E)
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
-#define TEMP_FLAGS_END   FLAG_TEMP_1F
+#define FLAG_TEMP_20     (TEMP_FLAGS_START + 0x20)
+#define FLAG_TEMP_21     (TEMP_FLAGS_START + 0x21)
+#define FLAG_TEMP_22     (TEMP_FLAGS_START + 0x22)
+#define FLAG_TEMP_23     (TEMP_FLAGS_START + 0x23)
+#define FLAG_TEMP_24     (TEMP_FLAGS_START + 0x24)
+#define FLAG_TEMP_25     (TEMP_FLAGS_START + 0x25)
+#define FLAG_TEMP_26     (TEMP_FLAGS_START + 0x26)
+#define FLAG_TEMP_27     (TEMP_FLAGS_START + 0x27)
+#define FLAG_TEMP_28     (TEMP_FLAGS_START + 0x28)
+#define FLAG_TEMP_29     (TEMP_FLAGS_START + 0x29)
+#define FLAG_TEMP_2A     (TEMP_FLAGS_START + 0x2A)
+#define FLAG_TEMP_2B     (TEMP_FLAGS_START + 0x2B)
+#define FLAG_TEMP_2C     (TEMP_FLAGS_START + 0x2C)
+#define FLAG_TEMP_2D     (TEMP_FLAGS_START + 0x2D)
+#define FLAG_TEMP_2E     (TEMP_FLAGS_START + 0x2E)
+#define FLAG_TEMP_2F     (TEMP_FLAGS_START + 0x2F)
+#define TEMP_FLAGS_END   FLAG_TEMP_2F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
