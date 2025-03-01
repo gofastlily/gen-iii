@@ -417,6 +417,8 @@ const u8 *const gStatusConditionStringsTable[][2] =
 
 void CB2_InitBattle(void)
 {
+    FlagSet(FLAG_PAUSE_TIME);
+
     if (!gTestRunnerEnabled)
         MoveSaveBlocks_ResetHeap();
     AllocateBattleResources();
@@ -5712,6 +5714,8 @@ static void HandleEndTurn_FinishBattle(void)
         if (gBattleControllerExecFlags == 0)
             gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
     }
+
+    FlagClear(FLAG_PAUSE_TIME);
 }
 
 static void FreeResetData_ReturnToOvOrDoEvolutions(void)

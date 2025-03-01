@@ -701,6 +701,7 @@ void ShowStartMenu(void)
 {
     if (!IsOverworldLinkActive())
     {
+        FlagSet(FLAG_PAUSE_TIME);
         FreezeObjectEvents();
         PlayerFreeze();
         StopPlayerAvatar();
@@ -1574,6 +1575,7 @@ void HideStartMenu(void)
 {
     PlaySE(SE_SELECT);
     HideStartMenuWindow();
+    FlagClear(FLAG_PAUSE_TIME);
 }
 
 void AppendToList(u8 *list, u8 *pos, u8 newEntry)
