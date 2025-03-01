@@ -172,7 +172,7 @@
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
 
-#define FLAG_UNUSED_0x96                     0x96 // Unused Flag
+#define FLAG_PAUSE_TIME                      0x96  // Leverage OW_FLAG_PAUSE_TIME
 
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
