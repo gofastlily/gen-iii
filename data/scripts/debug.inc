@@ -141,31 +141,43 @@ Debug_EventScript_Script_AdvanceSeason::
 	release
 	end
 
-Debug_EventScript_Script_2::
+Debug_EventScript_Script_DisplayTimeState::
+	callnative CheckTimeState
+	msgbox Debug_TimeState, MSGBOX_DEFAULT
 	release
 	end
 
-Debug_EventScript_Script_3::
+Debug_TimeState::
+	.string "Time is:  {STR_VAR_1}\n"
+	.string "Flow is:  {STR_VAR_2}  ({STR_VAR_3})$"
+
+Debug_EventScript_Script_FakeRtcToggle::
+	togglefakertc
 	release
 	end
 
-Debug_EventScript_Script_4::
+Debug_EventScript_Script_FakeRtcPause::
+	pausefakertc
 	release
 	end
 
-Debug_EventScript_Script_5::
+Debug_EventScript_Script_FakeRtcResume::
+	resumefakertc
 	release
 	end
 
-Debug_EventScript_Script_6::
+Debug_EventScript_Script_TimeRatioStandard::
+	altertimeratiostandard
 	release
 	end
 
-Debug_EventScript_Script_7::
+Debug_EventScript_Script_TimeRatioSlow::
+	altertimeratioslow
 	release
 	end
 
-Debug_EventScript_Script_8::
+Debug_EventScript_Script_TimeRatioRealtime::
+	altertimeratiorealtime
 	release
 	end
 

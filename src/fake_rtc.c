@@ -35,12 +35,84 @@ void FakeRtc_GetRawInfo(struct SiiRtcInfo *rtc)
         memcpy(rtc, fakeRtc, sizeof(struct SiiRtcInfo));
 }
 
+u16 FakeRtc_GetPreviousTimeRatio(void)
+{
+    return VarGet(VAR_PREVIOUS_TIME_RATIO);
+}
+
+void FakeRtc_SetPreviousTimeRatio(u16 time_ratio)
+{
+    VarSet(VAR_PREVIOUS_TIME_RATIO, time_ratio);
+}
+
+void FakeRtc_ReturnToPreviousTimeRatio(void)
+{
+    VarSet(VAR_ALTERED_TIME_RATIO, FakeRtc_GetPreviousTimeRatio());
+}
+
+u16 FakeRtc_GetAlteredTimeRatio(void)
+{
+    return VarGet(VAR_ALTERED_TIME_RATIO);
+}
+
+void FakeRtc_SetAlteredTimeRatio(u16 time_ratio)
+{
+    if (VarGet(VAR_ALTERED_TIME_RATIO) == time_ratio)
+        return;
+
+    FakeRtc_SetPreviousTimeRatio(FakeRtc_GetAlteredTimeRatio());
+    VarSet(VAR_ALTERED_TIME_RATIO, time_ratio);
+}
+
+void FakeRtc_SetAlteredTimeRatio_Standard(void)
+{
+    FakeRtc_SetAlteredTimeRatio(GEN_III_STANDARD);
+}
+
+void FakeRtc_SetAlteredTimeRatio_Slow(void)
+{
+    FakeRtc_SetAlteredTimeRatio(GEN_III_SLOW);
+}
+
+void FakeRtc_SetAlteredTimeRatio_Realtime(void)
+{
+    FakeRtc_SetAlteredTimeRatio(GEN_III_REALTIME);
+}
+
+void FakeRtc_Pause(void)
+{
+    FlagSet(FLAG_PAUSE_TIME);
+}
+
+void FakeRtc_Resume(void)
+{
+    FlagClear(FLAG_PAUSE_TIME);
+}
+
+void FakeRtc_Toggle(void)
+{
+    FlagToggle(FLAG_PAUSE_TIME);
+}
+
+bool8 FakeRtc_IsPaused(void)
+{
+    return FlagGet(FLAG_PAUSE_TIME);
+}
+
+void FakeRtc_Init(s32 hour, s32 minute)
+{
+    RtcInitLocalTimeOffset(hour, minute);
+    
+    FakeRtc_SetAlteredTimeRatio_Standard();
+    FakeRtc_Pause();
+}
+
 void FakeRtc_TickTimeForward(void)
 {
     if (!OW_USE_FAKE_RTC)
         return;
 
-    if (FlagGet(OW_FLAG_PAUSE_TIME))
+    if (FakeRtc_IsPaused())
         return;
 
     FakeRtc_AdvanceTimeBy(0, 0, 0, FakeRtc_GetSecondsRatio());
@@ -72,7 +144,7 @@ void AdvanceScript(void)
 
 u32 FakeRtc_GetSecondsRatio(void)
 {
-    switch (OW_ALTERED_TIME_RATIO)
+    switch (FakeRtc_GetAlteredTimeRatio())
     {
         case GEN_8_PLA:
             return 60;
@@ -92,19 +164,40 @@ void Script_PauseFakeRtc(void)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
-    FlagSet(OW_FLAG_PAUSE_TIME);
+    FakeRtc_Pause();
 }
 
 void Script_ResumeFakeRtc(void)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
-    FlagClear(OW_FLAG_PAUSE_TIME);
+    FakeRtc_Resume();
 }
 
 void Script_ToggleFakeRtc(void)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    
+    FakeRtc_Toggle();
+}
 
-    FlagToggle(OW_FLAG_PAUSE_TIME);
+void Script_SetAlteredTimeRatioStandard(void)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    
+    FakeRtc_SetAlteredTimeRatio_Standard();
+}
+
+void Script_SetAlteredTimeRatioSlow(void)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    
+    FakeRtc_SetAlteredTimeRatio_Slow();
+}
+
+void Script_SetAlteredTimeRatioRealtime(void)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    
+    FakeRtc_SetAlteredTimeRatio_Realtime();
 }

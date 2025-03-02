@@ -8,6 +8,7 @@
 #include "event_object_movement.h"
 #include "event_object_lock.h"
 #include "event_scripts.h"
+#include "fake_rtc.h"
 #include "fieldmap.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
@@ -700,7 +701,7 @@ void ShowStartMenu(void)
 {
     if (!IsOverworldLinkActive())
     {
-        FlagSet(FLAG_PAUSE_TIME);
+        FakeRtc_Pause();
         FreezeObjectEvents();
         PlayerFreeze();
         StopPlayerAvatar();
@@ -1574,7 +1575,7 @@ void HideStartMenu(void)
 {
     PlaySE(SE_SELECT);
     HideStartMenuWindow();
-    FlagClear(FLAG_PAUSE_TIME);
+    FakeRtc_Resume();
 }
 
 void AppendToList(u8 *list, u8 *pos, u8 newEntry)

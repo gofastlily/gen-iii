@@ -81,12 +81,14 @@
 #define OW_STORM_DRAIN              GEN_LATEST // In Gen8+, if a Pokémon with Storm Drain is leading the party, there is a 50% chance to encounter a Water-type Pokémon.
 #define OW_FLASH_FIRE               GEN_LATEST // In Gen8+, if a Pokémon with Flash Fire is leading the party, there is a 50% chance to encounter a Fire-type Pokémon.
 
-// These generational defines only make a distinction for OW_ALTERED_TIME_RATIO
+// These generational defines only make a distinction for VAR_ALTERED_TIME_RATIO
 #define GEN_8_PLA                       GEN_LATEST + 2
 #define GEN_III_STANDARD                GEN_LATEST + 3
 #define GEN_III_SLOW                    GEN_LATEST + 4
+#define GEN_III_REALTIME                GEN_LATEST + 5
 
 //Time
+<<<<<<< HEAD
 #define OW_TIMES_OF_DAY                 GEN_LATEST   // Different generations have the times of day change at different times.
 #define OW_USE_FAKE_RTC                 FALSE        // When TRUE, seconds on the in-game clock will only advance once every 60 playTimeVBlanks (every 60 frames).
 #define OW_ALTERED_TIME_RATIO           GEN_III_STANDARD // This has no effect if OW_USE_FAKE_RTC is FALSE.
@@ -107,6 +109,10 @@
 
 // Object Event Shadows
 #define OW_OBJECT_VANILLA_SHADOWS      FALSE    // In vanilla shadows in the overworld are only shown when jumping.
+=======
+#define OW_TIMES_OF_DAY                 GEN_LATEST // Different generations have the times of day change at different times.
+#define OW_USE_FAKE_RTC                 TRUE       // When TRUE, seconds on the in-game clock will only advance once every 60 playTimeVBlanks (every 60 frames).
+>>>>>>> 9d268b0a3f (Support variable altered time ratios)
 
 // Overworld flags
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
