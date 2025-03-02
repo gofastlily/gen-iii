@@ -40,6 +40,7 @@
 #include "data.h"
 #include "vs_seeker.h"
 #include "item.h"
+#include "fake_rtc.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_setup.h"
 #include "constants/game_stat.h"
@@ -259,6 +260,8 @@ static void Task_BattleStart(u8 taskId)
 
 static void CreateBattleStartTask(u8 transition, u16 song)
 {
+    FakeRtc_SetAlteredTimeRatio_Realtime();
+
     u8 taskId = CreateTask(Task_BattleStart, 1);
 
     gTasks[taskId].tTransition = transition;
