@@ -1006,6 +1006,11 @@ static void LoadMapFromWarp(bool32 a1)
     isOutdoors = IsMapTypeOutdoors(gMapHeader.mapType);
     isIndoors = IsMapTypeIndoors(gMapHeader.mapType);
 
+    if (isOutdoors)
+        FakeRtc_SetAlteredTimeRatio_Standard();
+    else if (isIndoors)
+        FakeRtc_SetAlteredTimeRatio_Slow();
+
     CheckLeftFriendsSecretBase();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
