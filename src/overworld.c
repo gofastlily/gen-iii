@@ -1876,12 +1876,6 @@ static bool8 RunFieldCallback(void)
     return TRUE;
 }
 
-void SetStartingTime(s32 hour, s32 minute)
-{
-    RtcInitLocalTimeOffset(hour, minute);
-    FlagSet(FLAG_PAUSE_TIME);
-}
-
 void CB2_NewGame(void)
 {
     FieldClearVBlankHBlankCallbacks();
@@ -1891,7 +1885,7 @@ void CB2_NewGame(void)
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext_Init();
-    SetStartingTime(10, 0);
+    FakeRtc_Init(TIME_STARTING_HOUR, TIME_STARTING_MINUTE);
     UnlockPlayerFieldControls();
     gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;

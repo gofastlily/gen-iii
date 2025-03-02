@@ -24,6 +24,7 @@
 #include "dma3.h"
 #include "event_data.h"
 #include "evolution_scene.h"
+#include "fake_rtc.h"
 #include "field_weather.h"
 #include "graphics.h"
 #include "gpu_regs.h"
@@ -418,7 +419,7 @@ const u8 *const gStatusConditionStringsTable[][2] =
 
 void CB2_InitBattle(void)
 {
-    FlagSet(FLAG_PAUSE_TIME);
+    FakeRtc_SetAlteredTimeRatio_Realtime();
 
     if (!gTestRunnerEnabled)
         MoveSaveBlocks_ResetHeap();
@@ -5716,7 +5717,7 @@ static void HandleEndTurn_FinishBattle(void)
             gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
     }
 
-    FlagClear(FLAG_PAUSE_TIME);
+    FakeRtc_ReturnToPreviousTimeRatio();
 }
 
 static void FreeResetData_ReturnToOvOrDoEvolutions(void)

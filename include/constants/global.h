@@ -183,6 +183,9 @@
 #define CONNECTION_DIVE     5
 #define CONNECTION_EMERGE   6
 
+#define TIME_STARTING_HOUR       10
+#define TIME_STARTING_MINUTE      0
+
 #if TESTING
 #include "config/test.h"
 #endif

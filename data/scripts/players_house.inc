@@ -61,7 +61,7 @@ PlayersHouse_2F_EventScript_WallClock::
 	goto_if_set FLAG_SET_WALL_CLOCK, PlayersHouse_2F_EventScript_CheckWallClock
 	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	playse SE_RG_BALL_CLICK
-	clearflag FLAG_PAUSE_TIME
+	resumefakertc
 	closemessage
 	delay 60
 	setvar VAR_LITTLEROOT_INTRO_STATE, 6
