@@ -18,6 +18,7 @@
 #include "constants/cable_club.h"
 #include "constants/coins.h"
 #include "constants/contest.h"
+#include "constants/day_night.h"
 #include "constants/daycare.h"
 #include "constants/decorations.h"
 #include "constants/difficulty.h"

@@ -111,6 +111,7 @@ void FormatDecimalDate(u8 *dest, s32 year, s32 month, s32 day);
 void FormatHexDate(u8 *dest, s32 year, s32 month, s32 day);
 void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct Time *t);
 void RtcCalcLocalTime(void);
+void RtcCalcLocalTimeFast(void);
 bool8 IsBetweenHours(s32 hours, s32 begin, s32 end);
 u8 GetTimeOfDay(void);
 void RtcInitLocalTimeOffset(s32 hour, s32 minute);

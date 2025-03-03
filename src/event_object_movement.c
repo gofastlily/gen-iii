@@ -4,6 +4,7 @@
 #include "battle_pyramid.h"
 #include "battle_util.h"
 #include "berry.h"
+#include "day_night.h"
 #include "data.h"
 #include "debug.h"
 #include "decoration.h"
@@ -3011,6 +3012,7 @@ static void UNUSED LoadObjectEventPaletteSet(u16 *paletteTags)
         LoadObjectEventPalette(paletteTags[i]);
 }
 
+// NOTE: Does not use LoadSpritePaletteDayNight because of naming screen
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette)
 {
     u8 paletteNum = IndexOfSpritePaletteTag(spritePalette->tag);

@@ -317,6 +317,22 @@ void RtcCalcLocalTime(void)
     RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
 }
 
+void RtcCalcLocalTimeFast(void)
+{
+    if (sErrorStatus & RTC_ERR_FLAG_MASK)
+    {
+        sRtc = sRtcDummy;
+    }
+    else
+    {
+        RtcGetStatus(&sRtc);
+        RtcDisableInterrupts();
+        SiiRtcGetTime(&sRtc);
+        RtcRestoreInterrupts();
+    }
+    RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
+}
+
 bool8 IsBetweenHours(s32 hours, s32 begin, s32 end)
 {
     if (end < begin)

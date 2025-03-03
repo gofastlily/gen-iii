@@ -11,6 +11,7 @@
 #include "battle_setup.h"
 #include "battle_tower.h"
 #include "battle_z_move.h"
+#include "day_night.h"
 #include "data.h"
 #include "dexnav.h"
 #include "event_data.h"
@@ -51,6 +52,7 @@
 #include "constants/battle_partner.h"
 #include "constants/battle_string_ids.h"
 #include "constants/cries.h"
+#include "constants/day_night.h"
 #include "constants/event_objects.h"
 #include "constants/form_change_types.h"
 #include "constants/hold_effects.h"
@@ -4509,7 +4511,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_DAY:
-                if (GetTimeOfDay() != TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
+                if (GetCurrentTimeOfDay() != TIME_NIGHT && friendship >= 220)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_DAY:
@@ -4517,7 +4519,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_NIGHT:
-                if (GetTimeOfDay() == TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
+                if (GetCurrentTimeOfDay() == TIME_NIGHT && friendship >= 220)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_NIGHT:
