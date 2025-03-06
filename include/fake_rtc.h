@@ -14,6 +14,7 @@ void FakeRtc_Init(s32 hour, s32 minute);
 void FakeRtc_SetAlteredTimeRatio_Standard(void);
 void FakeRtc_SetAlteredTimeRatio_Slow(void);
 void FakeRtc_SetAlteredTimeRatio_Realtime(void);
+void FakeRtc_SetAlteredTimeRatio_Previous(void);
 void FakeRtc_ReturnToPreviousTimeRatio(void);
 void FakeRtc_AdvanceTimeBy(u32 hours, u32 minutes, u32 seconds);
 void FakeRtc_ManuallySetTime(u32 hour, u32 minute, u32 second);

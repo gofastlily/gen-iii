@@ -181,6 +181,11 @@ Debug_EventScript_Script_TimeRatioRealtime::
 	release
 	end
 
+Debug_EventScript_Script_TimeRatioPrevious::
+	altertimeratioprevious
+	release
+	end
+
 Debug_CheckSaveBlock::
 	callnative CheckSaveBlock1Size
 	msgbox Debug_SaveBlock1Size, MSGBOX_DEFAULT
