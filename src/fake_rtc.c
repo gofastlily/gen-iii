@@ -47,7 +47,9 @@ void FakeRtc_SetPreviousTimeRatio(u16 time_ratio)
 
 void FakeRtc_ReturnToPreviousTimeRatio(void)
 {
+    u16 current_ratio = FakeRtc_GetAlteredTimeRatio();
     VarSet(VAR_ALTERED_TIME_RATIO, FakeRtc_GetPreviousTimeRatio());
+    VarSet(VAR_PREVIOUS_TIME_RATIO, current_ratio);
 }
 
 u16 FakeRtc_GetAlteredTimeRatio(void)
@@ -77,6 +79,11 @@ void FakeRtc_SetAlteredTimeRatio_Slow(void)
 void FakeRtc_SetAlteredTimeRatio_Realtime(void)
 {
     FakeRtc_SetAlteredTimeRatio(GEN_III_REALTIME);
+}
+
+void FakeRtc_SetAlteredTimeRatio_Previous(void)
+{
+    FakeRtc_ReturnToPreviousTimeRatio();
 }
 
 void FakeRtc_Pause(void)
@@ -200,4 +207,11 @@ void Script_SetAlteredTimeRatioRealtime(void)
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
     
     FakeRtc_SetAlteredTimeRatio_Realtime();
+}
+
+void Script_SetAlteredTimeRatioPrevious(void)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    
+    FakeRtc_SetAlteredTimeRatio_Previous();
 }

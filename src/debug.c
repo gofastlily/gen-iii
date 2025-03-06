@@ -145,6 +145,7 @@ enum ScriptDebugMenu
     DEBUG_UTIL_MENU_ITEM_SCRIPT_5,
     DEBUG_UTIL_MENU_ITEM_SCRIPT_6,
     DEBUG_UTIL_MENU_ITEM_SCRIPT_7,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_8,
 };
 
 enum FlagsVarsDebugMenu
@@ -328,6 +329,7 @@ static void DebugAction_Util_Script_FakeRtcResume(u8 taskId);
 static void DebugAction_Util_Script_TimeRatioStandard(u8 taskId);
 static void DebugAction_Util_Script_TimeRatioSlow(u8 taskId);
 static void DebugAction_Util_Script_TimeRatioRealtime(u8 taskId);
+static void DebugAction_Util_Script_TimeRatioPrevious(u8 taskId);
 static void DebugAction_Util_Script_DisplayTimeState(u8 taskId);
 
 static void DebugAction_OpenUtilitiesMenu(u8 taskId);
@@ -464,6 +466,7 @@ extern const u8 Debug_EventScript_Script_FakeRtcResume[];
 extern const u8 Debug_EventScript_Script_TimeRatioStandard[];
 extern const u8 Debug_EventScript_Script_TimeRatioSlow[];
 extern const u8 Debug_EventScript_Script_TimeRatioRealtime[];
+extern const u8 Debug_EventScript_Script_TimeRatioPrevious[];
 extern const u8 Debug_EventScript_Script_DisplayTimeState[];
 extern const u8 DebugScript_DaycareMonsNotCompatible[];
 extern const u8 DebugScript_OneDaycareMons[];
@@ -628,6 +631,7 @@ static const struct ListMenuItem sDebugMenu_Items_Scripts[] =
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_5] = {COMPOUND_STRING("Time Ratio Standard"), DEBUG_UTIL_MENU_ITEM_SCRIPT_5},
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_6] = {COMPOUND_STRING("Time Ratio Slow"), DEBUG_UTIL_MENU_ITEM_SCRIPT_6},
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_7] = {COMPOUND_STRING("Time Ratio Realtime"), DEBUG_UTIL_MENU_ITEM_SCRIPT_7},
+    [DEBUG_UTIL_MENU_ITEM_SCRIPT_8] = {COMPOUND_STRING("Time Ratio Previous"), DEBUG_UTIL_MENU_ITEM_SCRIPT_8},
 };
 
 static const struct ListMenuItem sDebugMenu_Items_FlagsVars[] =
@@ -801,6 +805,7 @@ static void (*const sDebugMenu_Actions_Scripts[])(u8) =
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_5] = DebugAction_Util_Script_TimeRatioStandard,
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_6] = DebugAction_Util_Script_TimeRatioSlow,
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_7] = DebugAction_Util_Script_TimeRatioRealtime,
+    [DEBUG_UTIL_MENU_ITEM_SCRIPT_8] = DebugAction_Util_Script_TimeRatioPrevious,
 };
 
 static void (*const sDebugMenu_Actions_Flags[])(u8) =
@@ -2200,6 +2205,11 @@ static void DebugAction_Util_Script_TimeRatioSlow(u8 taskId)
 static void DebugAction_Util_Script_TimeRatioRealtime(u8 taskId)
 {
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_TimeRatioRealtime);
+}
+
+static void DebugAction_Util_Script_TimeRatioPrevious(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_TimeRatioPrevious);
 }
 
 static void DebugAction_Util_Script_DisplayTimeState(u8 taskId)

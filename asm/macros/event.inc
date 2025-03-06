@@ -2332,6 +2332,11 @@
 	callnative Script_SetAlteredTimeRatioRealtime, requests_effects=1
 	.endm
 
+	@ When OW_USE_FAKE_RTC is assigned, this macro will change the time ratio to the previous value.
+	.macro altertimeratioprevious
+	callnative Script_SetAlteredTimeRatioPrevious, requests_effects=1
+	.endm
+
 	@ ============================ @
 	@ ITEM DESCRIPTION HEADER MACROS
 	@ Used with OW_SHOW_ITEM_DESCRIPTIONS config
