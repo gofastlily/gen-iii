@@ -5717,7 +5717,7 @@ static void HandleEndTurn_FinishBattle(void)
             gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
     }
 
-    FakeRtc_ReturnToPreviousTimeRatio();
+    FakeRtc_SetAlteredTimeRatio_Previous();
 }
 
 static void FreeResetData_ReturnToOvOrDoEvolutions(void)
