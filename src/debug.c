@@ -137,15 +137,15 @@ enum PartyDebugMenu
 
 enum ScriptDebugMenu
 {
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_1,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_2,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_3,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_4,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_5,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_6,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_7,
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_8,
+    DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON,
+    DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE,
+    DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE,
+    DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE,
+    DEBUG_UTIL_MENU_ITEM_FAKE_RTC_RESUME,
+    DEBUG_UTIL_MENU_ITEM_TIME_RATIO_STANDARD,
+    DEBUG_UTIL_MENU_ITEM_TIME_RATIO_SLOW,
+    DEBUG_UTIL_MENU_ITEM_TIME_RATIO_REALTIME,
+    DEBUG_UTIL_MENU_ITEM_TIME_RATIO_PREVIOUS,
 };
 
 enum FlagsVarsDebugMenu
@@ -322,15 +322,15 @@ static void Debug_InitDebugBattleData(void);
 static void Debug_RefreshListMenu(u8 taskId);
 static void Debug_RedrawListMenu(u8 taskId);
 
-static void DebugAction_Util_Script_AdvanceSeason(u8 taskId);
-static void DebugAction_Util_Script_FakeRtcToggle(u8 taskId);
-static void DebugAction_Util_Script_FakeRtcPause(u8 taskId);
-static void DebugAction_Util_Script_FakeRtcResume(u8 taskId);
-static void DebugAction_Util_Script_TimeRatioStandard(u8 taskId);
-static void DebugAction_Util_Script_TimeRatioSlow(u8 taskId);
-static void DebugAction_Util_Script_TimeRatioRealtime(u8 taskId);
-static void DebugAction_Util_Script_TimeRatioPrevious(u8 taskId);
-static void DebugAction_Util_Script_DisplayTimeState(u8 taskId);
+static void DebugAction_Util_AdvanceSeason(u8 taskId);
+static void DebugAction_Util_FakeRtcToggle(u8 taskId);
+static void DebugAction_Util_FakeRtcPause(u8 taskId);
+static void DebugAction_Util_FakeRtcResume(u8 taskId);
+static void DebugAction_Util_TimeRatioStandard(u8 taskId);
+static void DebugAction_Util_TimeRatioSlow(u8 taskId);
+static void DebugAction_Util_TimeRatioRealtime(u8 taskId);
+static void DebugAction_Util_TimeRatioPrevious(u8 taskId);
+static void DebugAction_Util_DisplayTimeState(u8 taskId);
 
 static void DebugAction_OpenUtilitiesMenu(u8 taskId);
 static void DebugAction_OpenPCBagMenu(u8 taskId);
@@ -459,15 +459,15 @@ extern const u8 Debug_EventScript_FontTest[];
 extern const u8 Debug_EventScript_CheckEVs[];
 extern const u8 Debug_EventScript_CheckIVs[];
 extern const u8 Debug_EventScript_InflictStatus1[];
-extern const u8 Debug_EventScript_Script_AdvanceSeason[];
-extern const u8 Debug_EventScript_Script_FakeRtcToggle[];
-extern const u8 Debug_EventScript_Script_FakeRtcPause[];
-extern const u8 Debug_EventScript_Script_FakeRtcResume[];
-extern const u8 Debug_EventScript_Script_TimeRatioStandard[];
-extern const u8 Debug_EventScript_Script_TimeRatioSlow[];
-extern const u8 Debug_EventScript_Script_TimeRatioRealtime[];
-extern const u8 Debug_EventScript_Script_TimeRatioPrevious[];
-extern const u8 Debug_EventScript_Script_DisplayTimeState[];
+extern const u8 Debug_EventScript_AdvanceSeason[];
+extern const u8 Debug_EventScript_FakeRtcToggle[];
+extern const u8 Debug_EventScript_FakeRtcPause[];
+extern const u8 Debug_EventScript_FakeRtcResume[];
+extern const u8 Debug_EventScript_TimeRatioStandard[];
+extern const u8 Debug_EventScript_TimeRatioSlow[];
+extern const u8 Debug_EventScript_TimeRatioRealtime[];
+extern const u8 Debug_EventScript_TimeRatioPrevious[];
+extern const u8 Debug_EventScript_DisplayTimeState[];
 extern const u8 DebugScript_DaycareMonsNotCompatible[];
 extern const u8 DebugScript_OneDaycareMons[];
 extern const u8 DebugScript_ZeroDaycareMons[];
@@ -623,15 +623,15 @@ static const struct ListMenuItem sDebugMenu_Items_Party[] =
 
 static const struct ListMenuItem sDebugMenu_Items_Scripts[] =
 {
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON] = {COMPOUND_STRING("Advance Season"), DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_1] = {COMPOUND_STRING("Display Time State"), DEBUG_UTIL_MENU_ITEM_SCRIPT_1},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_2] = {COMPOUND_STRING("Fake RTC Toggle"), DEBUG_UTIL_MENU_ITEM_SCRIPT_2},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_3] = {COMPOUND_STRING("Fake RTC Pause"), DEBUG_UTIL_MENU_ITEM_SCRIPT_3},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_4] = {COMPOUND_STRING("Fake RTC Resume"), DEBUG_UTIL_MENU_ITEM_SCRIPT_4},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_5] = {COMPOUND_STRING("Time Ratio Standard"), DEBUG_UTIL_MENU_ITEM_SCRIPT_5},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_6] = {COMPOUND_STRING("Time Ratio Slow"), DEBUG_UTIL_MENU_ITEM_SCRIPT_6},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_7] = {COMPOUND_STRING("Time Ratio Realtime"), DEBUG_UTIL_MENU_ITEM_SCRIPT_7},
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_8] = {COMPOUND_STRING("Time Ratio Previous"), DEBUG_UTIL_MENU_ITEM_SCRIPT_8},
+    [DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON]      = {COMPOUND_STRING("Advance Season"),      DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON},
+    [DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE]  = {COMPOUND_STRING("Display Time State"),  DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE},
+    [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE]     = {COMPOUND_STRING("Fake RTC Toggle"),     DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE},
+    [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE]      = {COMPOUND_STRING("Fake RTC Pause"),      DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE},
+    [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_RESUME]     = {COMPOUND_STRING("Fake RTC Resume"),     DEBUG_UTIL_MENU_ITEM_FAKE_RTC_RESUME},
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_STANDARD] = {COMPOUND_STRING("Time Ratio Standard"), DEBUG_UTIL_MENU_ITEM_TIME_RATIO_STANDARD},
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_SLOW]     = {COMPOUND_STRING("Time Ratio Slow"),     DEBUG_UTIL_MENU_ITEM_TIME_RATIO_SLOW},
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_REALTIME] = {COMPOUND_STRING("Time Ratio Realtime"), DEBUG_UTIL_MENU_ITEM_TIME_RATIO_REALTIME},
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_PREVIOUS] = {COMPOUND_STRING("Time Ratio Previous"), DEBUG_UTIL_MENU_ITEM_TIME_RATIO_PREVIOUS},
 };
 
 static const struct ListMenuItem sDebugMenu_Items_FlagsVars[] =
@@ -797,15 +797,15 @@ static void (*const sDebugMenu_Actions_Party[])(u8) =
 
 static void (*const sDebugMenu_Actions_Scripts[])(u8) =
 {
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON] = DebugAction_Util_Script_AdvanceSeason,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_1] = DebugAction_Util_Script_DisplayTimeState,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_2] = DebugAction_Util_Script_FakeRtcToggle,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_3] = DebugAction_Util_Script_FakeRtcPause,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_4] = DebugAction_Util_Script_FakeRtcResume,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_5] = DebugAction_Util_Script_TimeRatioStandard,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_6] = DebugAction_Util_Script_TimeRatioSlow,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_7] = DebugAction_Util_Script_TimeRatioRealtime,
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_8] = DebugAction_Util_Script_TimeRatioPrevious,
+    [DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON] = DebugAction_Util_AdvanceSeason,
+    [DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE] = DebugAction_Util_DisplayTimeState,
+    [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE] = DebugAction_Util_FakeRtcToggle,
+    [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE] = DebugAction_Util_FakeRtcPause,
+    [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_RESUME] = DebugAction_Util_FakeRtcResume,
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_STANDARD] = DebugAction_Util_TimeRatioStandard,
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_SLOW] = DebugAction_Util_TimeRatioSlow,
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_REALTIME] = DebugAction_Util_TimeRatioRealtime,
+    [DEBUG_UTIL_MENU_ITEM_TIME_RATIO_PREVIOUS] = DebugAction_Util_TimeRatioPrevious,
 };
 
 static void (*const sDebugMenu_Actions_Flags[])(u8) =
@@ -2172,49 +2172,49 @@ void CheckTimeState(void)
 
 // *******************************
 // Actions Scripts
-static void DebugAction_Util_Script_AdvanceSeason(u8 taskId)
+static void DebugAction_Util_AdvanceSeason(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_AdvanceSeason);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_AdvanceSeason);
 }
 
-static void DebugAction_Util_Script_FakeRtcToggle(u8 taskId)
+static void DebugAction_Util_FakeRtcToggle(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_FakeRtcToggle);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_FakeRtcToggle);
 }
 
-static void DebugAction_Util_Script_FakeRtcPause(u8 taskId)
+static void DebugAction_Util_FakeRtcPause(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_FakeRtcPause);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_FakeRtcPause);
 }
 
-static void DebugAction_Util_Script_FakeRtcResume(u8 taskId)
+static void DebugAction_Util_FakeRtcResume(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_FakeRtcResume);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_FakeRtcResume);
 }
 
-static void DebugAction_Util_Script_TimeRatioStandard(u8 taskId)
+static void DebugAction_Util_TimeRatioStandard(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_TimeRatioStandard);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_TimeRatioStandard);
 }
 
-static void DebugAction_Util_Script_TimeRatioSlow(u8 taskId)
+static void DebugAction_Util_TimeRatioSlow(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_TimeRatioSlow);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_TimeRatioSlow);
 }
 
-static void DebugAction_Util_Script_TimeRatioRealtime(u8 taskId)
+static void DebugAction_Util_TimeRatioRealtime(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_TimeRatioRealtime);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_TimeRatioRealtime);
 }
 
-static void DebugAction_Util_Script_TimeRatioPrevious(u8 taskId)
+static void DebugAction_Util_TimeRatioPrevious(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_TimeRatioPrevious);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_TimeRatioPrevious);
 }
 
-static void DebugAction_Util_Script_DisplayTimeState(u8 taskId)
+static void DebugAction_Util_DisplayTimeState(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_DisplayTimeState);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_DisplayTimeState);
 }
 
 // *******************************

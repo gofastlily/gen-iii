@@ -136,12 +136,12 @@ Debug_EventScript_Text_OffensiveIVs:
 Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
-Debug_EventScript_Script_AdvanceSeason::
+Debug_EventScript_AdvanceSeason::
 	callnative AdvanceSeason
 	release
 	end
 
-Debug_EventScript_Script_DisplayTimeState::
+Debug_EventScript_DisplayTimeState::
 	callnative CheckTimeState
 	msgbox Debug_TimeState, MSGBOX_DEFAULT
 	release
@@ -151,37 +151,37 @@ Debug_TimeState::
 	.string "Time is:  {STR_VAR_1}\n"
 	.string "Flow is:  {STR_VAR_2}  ({STR_VAR_3})$"
 
-Debug_EventScript_Script_FakeRtcToggle::
+Debug_EventScript_FakeRtcToggle::
 	togglefakertc
 	release
 	end
 
-Debug_EventScript_Script_FakeRtcPause::
+Debug_EventScript_FakeRtcPause::
 	pausefakertc
 	release
 	end
 
-Debug_EventScript_Script_FakeRtcResume::
+Debug_EventScript_FakeRtcResume::
 	resumefakertc
 	release
 	end
 
-Debug_EventScript_Script_TimeRatioStandard::
+Debug_EventScript_TimeRatioStandard::
 	altertimeratiostandard
 	release
 	end
 
-Debug_EventScript_Script_TimeRatioSlow::
+Debug_EventScript_TimeRatioSlow::
 	altertimeratioslow
 	release
 	end
 
-Debug_EventScript_Script_TimeRatioRealtime::
+Debug_EventScript_TimeRatioRealtime::
 	altertimeratiorealtime
 	release
 	end
 
-Debug_EventScript_Script_TimeRatioPrevious::
+Debug_EventScript_TimeRatioPrevious::
 	altertimeratioprevious
 	release
 	end
