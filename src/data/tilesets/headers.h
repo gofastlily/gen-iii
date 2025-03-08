@@ -1060,6 +1060,9 @@ const struct Tileset gTileset_GeneralKanto =
     .metatiles = gMetatiles_GeneralKanto,
     .metatileAttributes = gMetatileAttributes_GeneralKanto,
     .callback = NULL,
+    .palettes_summer = gTilesetPalettes_GeneralKanto_Summer,
+    .palettes_autumn = gTilesetPalettes_GeneralKanto_Autumn,
+    .palettes_winter = gTilesetPalettes_GeneralKanto_Winter,
 };
 
 const struct Tileset gTileset_PalletTown =
@@ -1071,6 +1074,9 @@ const struct Tileset gTileset_PalletTown =
     .metatiles = gMetatiles_PalletTown,
     .metatileAttributes = gMetatileAttributes_PalletTown,
     .callback = NULL,
+    .palettes_summer = gTilesetPalettes_PalletTown_Summer,
+    .palettes_autumn = gTilesetPalettes_PalletTown_Autumn,
+    .palettes_winter = gTilesetPalettes_PalletTown_Winter,
 };
 
 const struct Tileset gTileset_BuildingKanto =
@@ -1082,6 +1088,9 @@ const struct Tileset gTileset_BuildingKanto =
     .metatiles = gMetatiles_BuildingKanto,
     .metatileAttributes = gMetatileAttributes_BuildingKanto,
     .callback = NULL,
+    .palettes_summer = NULL,
+    .palettes_autumn = NULL,
+    .palettes_winter = NULL,
 };
 
 const struct Tileset gTileset_GenericBuildingKanto1 =
@@ -1093,6 +1102,9 @@ const struct Tileset gTileset_GenericBuildingKanto1 =
     .metatiles = gMetatiles_GenericBuildingKanto1,
     .metatileAttributes = gMetatileAttributes_GenericBuildingKanto1,
     .callback = NULL,
+    .palettes_summer = NULL,
+    .palettes_autumn = NULL,
+    .palettes_winter = NULL,
 };
 
 const struct Tileset gTileset_OaksLab =
@@ -1104,4 +1116,7 @@ const struct Tileset gTileset_OaksLab =
     .metatiles = gMetatiles_OaksLab,
     .metatileAttributes = gMetatileAttributes_OaksLab,
     .callback = NULL,
+    .palettes_summer = NULL,
+    .palettes_autumn = NULL,
+    .palettes_winter = NULL,
 };
