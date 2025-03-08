@@ -10,6 +10,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+#include "fake_rtc.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
 #include "field_effect.h"
@@ -1001,6 +1002,11 @@ static void LoadMapFromWarp(bool32 a1)
     isOutdoors = IsMapTypeOutdoors(gMapHeader.mapType);
     isIndoors = IsMapTypeIndoors(gMapHeader.mapType);
 
+    if (isOutdoors)
+        FakeRtc_SetAlteredTimeRatio_Standard();
+    else if (isIndoors)
+        FakeRtc_SetAlteredTimeRatio_Slow();
+
     CheckLeftFriendsSecretBase();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
@@ -1712,6 +1718,7 @@ void CB2_NewGame(void)
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext_Init();
+    FakeRtc_Init(TIME_STARTING_HOUR, TIME_STARTING_MINUTE);
     UnlockPlayerFieldControls();
     gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
