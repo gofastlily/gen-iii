@@ -136,7 +136,7 @@ enum PartyDebugMenu
 
 enum ScriptDebugMenu
 {
-    DEBUG_UTIL_MENU_ITEM_SCRIPT_1,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON,
     DEBUG_UTIL_MENU_ITEM_SCRIPT_2,
     DEBUG_UTIL_MENU_ITEM_SCRIPT_3,
     DEBUG_UTIL_MENU_ITEM_SCRIPT_4,
@@ -320,7 +320,7 @@ static void Debug_InitDebugBattleData(void);
 static void Debug_RefreshListMenu(u8 taskId);
 static void Debug_RedrawListMenu(u8 taskId);
 
-static void DebugAction_Util_Script_1(u8 taskId);
+static void DebugAction_Util_Script_AdvanceSeason(u8 taskId);
 static void DebugAction_Util_Script_2(u8 taskId);
 static void DebugAction_Util_Script_3(u8 taskId);
 static void DebugAction_Util_Script_4(u8 taskId);
@@ -456,7 +456,7 @@ extern const u8 Debug_EventScript_FontTest[];
 extern const u8 Debug_EventScript_CheckEVs[];
 extern const u8 Debug_EventScript_CheckIVs[];
 extern const u8 Debug_EventScript_InflictStatus1[];
-extern const u8 Debug_EventScript_Script_1[];
+extern const u8 Debug_EventScript_Script_AdvanceSeason[];
 extern const u8 Debug_EventScript_Script_2[];
 extern const u8 Debug_EventScript_Script_3[];
 extern const u8 Debug_EventScript_Script_4[];
@@ -619,7 +619,7 @@ static const struct ListMenuItem sDebugMenu_Items_Party[] =
 
 static const struct ListMenuItem sDebugMenu_Items_Scripts[] =
 {
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_1] = {COMPOUND_STRING("Script 1"), DEBUG_UTIL_MENU_ITEM_SCRIPT_1},
+    [DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON] = {COMPOUND_STRING("Advance Season"), DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON},
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_2] = {COMPOUND_STRING("Script 2"), DEBUG_UTIL_MENU_ITEM_SCRIPT_2},
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_3] = {COMPOUND_STRING("Script 3"), DEBUG_UTIL_MENU_ITEM_SCRIPT_3},
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_4] = {COMPOUND_STRING("Script 4"), DEBUG_UTIL_MENU_ITEM_SCRIPT_4},
@@ -792,7 +792,7 @@ static void (*const sDebugMenu_Actions_Party[])(u8) =
 
 static void (*const sDebugMenu_Actions_Scripts[])(u8) =
 {
-    [DEBUG_UTIL_MENU_ITEM_SCRIPT_1] = DebugAction_Util_Script_1,
+    [DEBUG_UTIL_MENU_ITEM_SCRIPT_ADVANCE_SEASON] = DebugAction_Util_Script_AdvanceSeason,
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_2] = DebugAction_Util_Script_2,
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_3] = DebugAction_Util_Script_3,
     [DEBUG_UTIL_MENU_ITEM_SCRIPT_4] = DebugAction_Util_Script_4,
@@ -2129,9 +2129,9 @@ void BufferExpansionVersion(struct ScriptContext *ctx)
 
 // *******************************
 // Actions Scripts
-static void DebugAction_Util_Script_1(u8 taskId)
+static void DebugAction_Util_Script_AdvanceSeason(u8 taskId)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_1);
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_AdvanceSeason);
 }
 
 static void DebugAction_Util_Script_2(u8 taskId)

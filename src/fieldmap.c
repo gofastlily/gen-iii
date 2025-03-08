@@ -12,6 +12,7 @@
 #include "palette.h"
 #include "pokenav.h"
 #include "script.h"
+#include "seasons.h"
 #include "secret_base.h"
 #include "trainer_hill.h"
 #include "tv.h"
@@ -881,7 +882,7 @@ static void UNUSED ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
 static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size, bool8 skipFaded)
 {
     u16 black = RGB_BLACK;
-    u8 season = getCurrentSeason();
+    u8 season = CurrentSeasonGet();
 
     if (tileset)
     {
