@@ -160,10 +160,10 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
 
 static const struct WindowTemplate sWindowTemplate_StartClock = {
     .bg = 0, 
-    .tilemapLeft = 1, 
-    .tilemapTop = 1, 
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
     .width = 13, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
-    .height = 2, 
+    .height = 4,
     .paletteNum = 15,
     .baseBlock = 0x30
 };
@@ -496,6 +496,18 @@ const u8 *const gDayNameStringsTable[7] = {
     gText_Friday,
 };
 
+const u8 gText_Spring[] = _("Spring");
+const u8 gText_Summer[] = _("Summer");
+const u8 gText_Autumn[] = _("Autumn");
+const u8 gText_Winter[] = _("Winter");
+
+const u8 *const gSeasonNameStringsTable[4] = {
+    gText_Spring,
+    gText_Summer,
+    gText_Autumn,
+    gText_Winter
+};
+
 static void ShowTimeWindow(void)
 {
     const u8 *suffix;
@@ -530,7 +542,7 @@ static void ShowTimeWindow(void)
     }
 
     StringExpandPlaceholders(gStringVar4, gDayNameStringsTable[(gLocalTime.days % 7)]);
-    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL); 
+    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
 
     ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
     *ptr = 0xF0;
@@ -539,6 +551,9 @@ static void ShowTimeWindow(void)
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3), 1, 0xFF, NULL); // print time
 
     AddTextPrinterParameterized(sStartClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm
+
+    StringExpandPlaceholders(gStringVar4, gSeasonNameStringsTable[VarGet(VAR_CURRENT_SEASON)]);
+    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
 
     CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
 }
