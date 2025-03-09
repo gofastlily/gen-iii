@@ -5716,8 +5716,6 @@ static void HandleEndTurn_FinishBattle(void)
         if (gBattleControllerExecFlags == 0)
             gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
     }
-
-    FakeRtc_SetAlteredTimeRatio_Previous();
 }
 
 static void FreeResetData_ReturnToOvOrDoEvolutions(void)
@@ -5847,6 +5845,8 @@ static void ReturnFromBattleToOverworld(void)
 
     m4aSongNumStop(SE_LOW_HEALTH);
     SetMainCallback2(gMain.savedCallback);
+
+    FakeRtc_SetAlteredTimeRatio_Previous();
 }
 
 void RunBattleScriptCommands_PopCallbacksStack(void)
