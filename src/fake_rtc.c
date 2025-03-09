@@ -6,6 +6,7 @@
 #include "rtc.h"
 #include "fake_rtc.h"
 #include "event_data.h"
+#include "seasons.h"
 #include "script.h"
 
 void FakeRtc_Reset(void)

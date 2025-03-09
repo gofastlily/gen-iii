@@ -24,18 +24,18 @@ static const struct SiiRtcInfo sRtcDummy = {0, MONTH_JAN, 1}; // 2000 Jan 1
 
 const s32 sNumDaysInMonths[MONTH_COUNT] =
 {
-    [MONTH_JAN - 1] = 31,
-    [MONTH_FEB - 1] = 28,
-    [MONTH_MAR - 1] = 31,
-    [MONTH_APR - 1] = 30,
-    [MONTH_MAY - 1] = 31,
-    [MONTH_JUN - 1] = 30,
-    [MONTH_JUL - 1] = 31,
-    [MONTH_AUG - 1] = 31,
-    [MONTH_SEP - 1] = 30,
-    [MONTH_OCT - 1] = 31,
-    [MONTH_NOV - 1] = 30,
-    [MONTH_DEC - 1] = 31,
+    [MONTH_JAN - 1] = 4,
+    [MONTH_FEB - 1] = 2,
+    [MONTH_MAR - 1] = 4,
+    [MONTH_APR - 1] = 3,
+    [MONTH_MAY - 1] = 4,
+    [MONTH_JUN - 1] = 3,
+    [MONTH_JUL - 1] = 4,
+    [MONTH_AUG - 1] = 4,
+    [MONTH_SEP - 1] = 3,
+    [MONTH_OCT - 1] = 4,
+    [MONTH_NOV - 1] = 3,
+    [MONTH_DEC - 1] = 4,
 };
 
 void RtcDisableInterrupts(void)

@@ -1,6 +1,7 @@
 #include "global.h"
 #include "datetime.h"
 #include "rtc.h"
+#include "seasons.h"
 
 
 const struct DateTime gGen3Epoch = 
@@ -31,6 +32,16 @@ void DateTime_AddDays(struct DateTime *dateTime, u32 days)
             }
             days -= (remainingDaysInMonth + 1);
             dateTime->dayOfWeek = (dateTime->dayOfWeek + remainingDaysInMonth + 1) % WEEKDAY_COUNT;
+            switch (dateTime->month)
+            {
+                case MONTH_DEC:
+                case MONTH_MAR:
+                case MONTH_JUN:
+                case MONTH_SEP:
+                    AdvanceSeason();
+                default:
+                    break;
+            }
         }
         else
         {
