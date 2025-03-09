@@ -36,6 +36,7 @@
 #include "save.h"
 #include "scanline_effect.h"
 #include "script.h"
+#include "seasons.h"
 #include "sound.h"
 #include "start_menu.h"
 #include "strings.h"
@@ -477,10 +478,10 @@ static void ShowPyramidFloorWindow(void)
 
 #define CLOCK_WINDOW_WIDTH 56
 
-const u8 gText_Spring[] = _("Spring");
-const u8 gText_Summer[] = _("Summer");
-const u8 gText_Autumn[] = _("Autumn");
-const u8 gText_Winter[] = _("Winter");
+const u8 gText_Spring[] = _("Spring,");
+const u8 gText_Summer[] = _("Summer,");
+const u8 gText_Autumn[] = _("Autumn,");
+const u8 gText_Winter[] = _("Winter,");
 
 const u8 *const gSeasonNameStringsTable[4] = {
     gText_Spring,
@@ -532,6 +533,9 @@ static void ShowTimeWindow(void)
 
     StringExpandPlaceholders(gStringVar4, gSeasonNameStringsTable[VarGet(VAR_CURRENT_SEASON)]);
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
+
+    ConvertIntToDecimalStringN(gStringVar4, DaysInSeasonGet() + 0, STR_CONV_MODE_LEFT_ALIGN, 2);
+    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 16, 0xFF, NULL); // print current day
 
     CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
 }

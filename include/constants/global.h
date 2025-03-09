@@ -183,6 +183,7 @@
 #define CONNECTION_DIVE     5
 #define CONNECTION_EMERGE   6
 
+#define TIME_STARTING_DAY         0
 #define TIME_STARTING_HOUR       10
 #define TIME_STARTING_MINUTE      0
 
