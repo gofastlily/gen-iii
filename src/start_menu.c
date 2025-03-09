@@ -534,7 +534,7 @@ static void ShowTimeWindow(void)
     StringExpandPlaceholders(gStringVar4, gSeasonNameStringsTable[VarGet(VAR_CURRENT_SEASON)]);
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
 
-    ConvertIntToDecimalStringN(gStringVar4, DaysInSeasonGet() + 0, STR_CONV_MODE_LEFT_ALIGN, 2);
+    ConvertIntToDecimalStringN(gStringVar4, DaysInSeasonGet() + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 16, 0xFF, NULL); // print current day
 
     CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
