@@ -163,9 +163,9 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
     .bg = 0, 
     .tilemapLeft = 1,
     .tilemapTop = 1,
-    .width = 7,
+    .width = 8,
     .height = 4,
-    .paletteNum = 15,
+    .paletteNum = 10,
     .baseBlock = 0x30
 };
 
@@ -476,7 +476,7 @@ static void ShowPyramidFloorWindow(void)
     CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
 }
 
-#define CLOCK_WINDOW_WIDTH 56
+#define CLOCK_WINDOW_WIDTH 64
 
 const u8 gText_Spring[] = _("Spring,");
 const u8 gText_Summer[] = _("Summer,");
@@ -490,6 +490,13 @@ const u8 *const gSeasonNameStringsTable[4] = {
     gText_Winter
 };
 
+static void DisplayTimeOfDayIcon(u8 time_of_day){
+	static const u8 sTimeOfDayIcons_Gfx[] = INCBIN_U8("graphics/interface/time_of_day_icons.4bpp");
+	BlitBitmapToWindow(sStartClockWindowId, sTimeOfDayIcons_Gfx + 0xC0 * time_of_day, 0, 0, 24, 16);
+	PutWindowTilemap(sStartClockWindowId);
+	CopyWindowToVram(sStartClockWindowId, 3);
+}
+
 static void ShowTimeWindow(void)
 {
     const u8 *suffix;
@@ -497,6 +504,9 @@ static void ShowTimeWindow(void)
     u8 convertedHours;
 
     RtcCalcLocalTime();
+
+    static const u16 sTimeOfDayIcons_Pal[] = INCBIN_U16("graphics/interface/start_menu_clock.gbapal");
+    LoadPalette(sTimeOfDayIcons_Pal, BG_PLTT_ID(10), PLTT_SIZE_4BPP);
 
     // print window
     sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
@@ -535,8 +545,9 @@ static void ShowTimeWindow(void)
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
 
     ConvertIntToDecimalStringN(gStringVar4, DaysInSeasonGet() + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
-    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 16, 0xFF, NULL); // print current day
+    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - 12, 16, 0xFF, NULL); // print current day
 
+    DisplayTimeOfDayIcon(GetTimeOfDay());
     CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
 }
 
