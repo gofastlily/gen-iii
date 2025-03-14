@@ -84,7 +84,7 @@ extern const u32 gRegionMapCityZoomText_Gfx[];
 static const u16 sMapSecInfoWindow_Pal[] = INCBIN_U16("graphics/pokenav/region_map/info_window.gbapal");
 static const u32 sRegionMapCityZoomTiles_Gfx[] = INCBIN_U32("graphics/pokenav/region_map/zoom_tiles.4bpp.lz");
 
-#include "data/region_map/city_map_tilemaps.h"
+#include "data/region_map/hoenn/city_map_tilemaps.h"
 
 static const struct BgTemplate sRegionMapBgTemplates[3] =
 {
@@ -149,7 +149,7 @@ static const struct WindowTemplate sMapSecInfoWindowTemplate =
     .baseBlock = 0x4C
 };
 
-#include "data/region_map/city_map_entries.h"
+#include "data/region_map/hoenn/city_map_entries.h"
 
 static const struct OamData sCityZoomTextSprite_OamData =
 {
