@@ -165,7 +165,7 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
     .tilemapTop = 1,
     .width = 8,
     .height = 4,
-    .paletteNum = 10,
+    .paletteNum = 12,
     .baseBlock = 0x30
 };
 
@@ -506,7 +506,7 @@ static void ShowTimeWindow(void)
     RtcCalcLocalTime();
 
     static const u16 sTimeOfDayIcons_Pal[] = INCBIN_U16("graphics/interface/start_menu_clock.gbapal");
-    LoadPalette(sTimeOfDayIcons_Pal, BG_PLTT_ID(10), PLTT_SIZE_4BPP);
+    LoadPalette(sTimeOfDayIcons_Pal, BG_PLTT_ID(12), PLTT_SIZE_4BPP);
 
     // print window
     sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
