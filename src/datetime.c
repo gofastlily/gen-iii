@@ -6,11 +6,11 @@
 
 const struct DateTime gGen3Epoch = 
 {
-    .year = 2000,
-    .month = MONTH_JAN,
+    .year = 2023,
+    .month = MONTH_APR,
     .day = 1,
-    .dayOfWeek = WEEKDAY_SAT,
-    .hour = 0,
+    .dayOfWeek = WEEKDAY_THU,
+    .hour = 10,
     .minute = 0,
     .second = 0,
 };
