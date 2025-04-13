@@ -71,7 +71,7 @@
 
     #define NIGHT_HOUR_BEGIN   18
     #define NIGHT_HOUR_END     6
-#elif OW_TIMES_OF_DAY >= GEN_8
+#elif GEN_8 <= OW_TIMES_OF_DAY && OW_TIMES_OF_DAY <= GEN_LATEST
     #define MORNING_HOUR_BEGIN 6
     #define MORNING_HOUR_END   10
 
@@ -82,6 +82,18 @@
     #define EVENING_HOUR_END   20
 
     #define NIGHT_HOUR_BEGIN   20
+    #define NIGHT_HOUR_END     6
+#elif OW_TIMES_OF_DAY == GEN_III
+    #define MORNING_HOUR_BEGIN 6
+    #define MORNING_HOUR_END   9
+
+    #define DAY_HOUR_BEGIN     9
+    #define DAY_HOUR_END       19
+
+    #define EVENING_HOUR_BEGIN 19
+    #define EVENING_HOUR_END   21
+
+    #define NIGHT_HOUR_BEGIN   21
     #define NIGHT_HOUR_END     6
 #endif
 

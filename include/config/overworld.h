@@ -88,7 +88,7 @@
 #define GEN_III_REALTIME                GEN_LATEST + 5
 
 //Time
-#define OW_TIMES_OF_DAY                 GEN_LATEST   // Different generations have the times of day change at different times.
+#define OW_TIMES_OF_DAY                 GEN_III   // Different generations have the times of day change at different times.
 #define OW_USE_FAKE_RTC                 TRUE         // When TRUE, seconds on the in-game clock will only advance once every 60 playTimeVBlanks (every 60 frames).
 #define OW_ALTERED_TIME_RATIO           GEN_III_STANDARD // This has no effect if OW_USE_FAKE_RTC is FALSE.
                                                          // In GEN_8_PLA, the time in game moves forward 60 seconds for every second in the RTC.
