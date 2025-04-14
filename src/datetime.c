@@ -10,7 +10,7 @@ const struct DateTime gGen3Epoch =
     .month = MONTH_APR,
     .day = 2,
     .dayOfWeek = WEEKDAY_THU,
-    .hour = 10,
+    .hour = 0,
     .minute = 0,
     .second = 0,
 };
