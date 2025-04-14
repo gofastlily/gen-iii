@@ -95,7 +95,7 @@
                                                          // In GEN_9, it is 20 seconds.
                                                          // In GEN_III_STANDARD, it is 80 seconds.  This is based on the standard flow of time from Majora's Mask
                                                          // In GEN_III_SLOW, it is 24 seconds.  This is based on the Inverted Song of Time from Majora's Mask
-#define OW_TIME_OF_DAY_ENCOUNTERS       FALSE        // If TRUE, will allow the user to define and use different encounter tables based on the time of day.
+#define OW_TIME_OF_DAY_ENCOUNTERS       TRUE         // If TRUE, will allow the user to define and use different encounter tables based on the time of day.
 #define OW_TIME_OF_DAY_DISABLE_FALLBACK FALSE        // If TRUE, if the encounter table for a specific map and time is empty, the area will have no encounters instead of falling back to the vanilla map and time.
 #define OW_TIME_OF_DAY_DEFAULT          TIME_MORNING // Should be set to whatever is the first value in the TimeOfDay enum in rtc.h
 #define OW_TIME_OF_DAY_FALLBACK         OW_TIME_OF_DAY_DEFAULT // The time of day that encounter tables fall back to. Defaults to whatever OW_TIME_OF_DAY_FALLBACK is set to.
