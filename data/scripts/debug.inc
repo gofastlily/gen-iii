@@ -642,4 +642,4 @@ Debug_CalendarText::
 	.string "Date is: {STR_VAR_1}, {STR_VAR_2}, {STR_VAR_3}$"
 
 Debug_SeasonText::
-	.string "Season is: {STR_VAR_1} {STR_VAR_2}$"
+	.string "Season is: {STR_VAR_1} {STR_VAR_2}/{STR_VAR_3}$"
