@@ -138,16 +138,16 @@ enum PartyDebugMenu
 };
 
 enum ScriptDebugMenu
- {
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_1,
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_2,
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_3,
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_4,
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_5,
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_6,
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_7,
-     DEBUG_UTIL_MENU_ITEM_SCRIPT_8,
- };
+{
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_1,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_2,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_3,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_4,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_5,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_6,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_7,
+    DEBUG_UTIL_MENU_ITEM_SCRIPT_8,
+};
 
 enum FlagsVarsDebugMenu
 {
@@ -4692,52 +4692,52 @@ static void DebugAction_BerryFunctions_Weeds(u8 taskId)
     Debug_DestroyMenu_Full(taskId);
 }
 
- // *******************************
- // Actions TimeRatio
- static void DebugAction_TimeRatio_FakeRtcToggle(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_FakeRtcToggle);
- }
- 
- static void DebugAction_TimeRatio_FakeRtcPause(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_FakeRtcPause);
- }
- 
- static void DebugAction_TimeRatio_FakeRtcResume(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_FakeRtcResume);
- }
- 
- static void DebugAction_TimeRatio_TimeRatioStandard(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioStandard);
- }
- 
- static void DebugAction_TimeRatio_TimeRatioSlow(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioSlow);
- }
- 
- static void DebugAction_TimeRatio_TimeRatioRealtime(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioRealtime);
- }
- 
- static void DebugAction_TimeRatio_TimeRatioPrevious(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioPrevious);
- }
- 
- static void DebugAction_TimeRatio_DisplayTimeState(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_DisplayTimeState);
- }
- 
- static void DebugAction_TimeRatio_DisplayCalendarText(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_CalendarText);
- }
+// *******************************
+// Actions TimeRatio
+static void DebugAction_TimeRatio_FakeRtcToggle(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_FakeRtcToggle);
+}
+
+static void DebugAction_TimeRatio_FakeRtcPause(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_FakeRtcPause);
+}
+
+static void DebugAction_TimeRatio_FakeRtcResume(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_FakeRtcResume);
+}
+
+static void DebugAction_TimeRatio_TimeRatioStandard(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioStandard);
+}
+
+static void DebugAction_TimeRatio_TimeRatioSlow(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioSlow);
+}
+
+static void DebugAction_TimeRatio_TimeRatioRealtime(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioRealtime);
+}
+
+static void DebugAction_TimeRatio_TimeRatioPrevious(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_TimeRatioPrevious);
+}
+
+static void DebugAction_TimeRatio_DisplayTimeState(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_DisplayTimeState);
+}
+
+static void DebugAction_TimeRatio_DisplayCalendarText(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_TimeRatio_CalendarText);
+}
 
 // *******************************
 // Actions Party/Boxes
