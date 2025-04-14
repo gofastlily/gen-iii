@@ -26,16 +26,16 @@ const s32 sNumDaysInMonths[MONTH_COUNT] =
 {
     [MONTH_JAN - 1] = 4,
     [MONTH_FEB - 1] = 2,
-    [MONTH_MAR - 1] = 4,
+    [MONTH_MAR - 1] = 4,  // Spring
     [MONTH_APR - 1] = 3,
     [MONTH_MAY - 1] = 4,
-    [MONTH_JUN - 1] = 3,
+    [MONTH_JUN - 1] = 3,  // Summer
     [MONTH_JUL - 1] = 4,
     [MONTH_AUG - 1] = 4,
-    [MONTH_SEP - 1] = 3,
+    [MONTH_SEP - 1] = 3,  // Autumn
     [MONTH_OCT - 1] = 4,
     [MONTH_NOV - 1] = 3,
-    [MONTH_DEC - 1] = 4,
+    [MONTH_DEC - 1] = 4,  // Winter
 };
 
 void RtcDisableInterrupts(void)
@@ -435,6 +435,11 @@ enum Month GetMonth(void)
     ConvertTimeToDateTime(&dateTime, &gLocalTime);
 
     return dateTime.month;
+}
+
+s32 GetDaysInMonth(enum Month targetMonth)
+{
+    return sNumDaysInMonths[targetMonth - 1];
 }
 
 u8 GetDay(void)

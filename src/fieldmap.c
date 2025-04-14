@@ -882,7 +882,7 @@ static void UNUSED ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
 static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size, bool8 skipFaded)
 {
     u16 black = RGB_BLACK;
-    u8 season = CurrentSeasonGet();
+    u8 season = GetSeason();
 
     if (tileset)
     {

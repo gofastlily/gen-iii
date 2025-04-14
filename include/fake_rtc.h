@@ -11,7 +11,7 @@ u16 FakeRtc_GetAlteredTimeRatio(void);
 void FakeRtc_Pause(void);
 void FakeRtc_Resume(void);
 bool8 FakeRtc_IsPaused(void);
-void FakeRtc_Init(s32 day, s32 hour, s32 minute);
+void FakeRtc_Init(s32 hour, s32 minute);
 void FakeRtc_SetAlteredTimeRatio_Standard(void);
 void FakeRtc_SetAlteredTimeRatio_Slow(void);
 void FakeRtc_SetAlteredTimeRatio_Realtime(void);

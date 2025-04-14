@@ -107,10 +107,10 @@ bool8 FakeRtc_IsPaused(void)
     return FlagGet(FLAG_PAUSE_TIME);
 }
 
-void FakeRtc_Init(s32 day, s32 hour, s32 minute)
+void FakeRtc_Init(s32 hour, s32 minute)
 {
     RtcInitLocalTimeOffset(0, 0);
-    FakeRtc_ManuallySetTime(day, hour, minute, 0);
+    FakeRtc_ManuallySetTime(0, hour, minute, 0);
     FakeRtc_SetAlteredTimeRatio_Standard();
     FakeRtc_Pause();
 }

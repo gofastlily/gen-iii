@@ -8,7 +8,7 @@ const struct DateTime gGen3Epoch =
 {
     .year = 2023,
     .month = MONTH_APR,
-    .day = 1,
+    .day = 2,
     .dayOfWeek = WEEKDAY_THU,
     .hour = 10,
     .minute = 0,
@@ -32,16 +32,6 @@ void DateTime_AddDays(struct DateTime *dateTime, u32 days)
             }
             days -= (remainingDaysInMonth + 1);
             dateTime->dayOfWeek = (dateTime->dayOfWeek + remainingDaysInMonth + 1) % WEEKDAY_COUNT;
-            switch (dateTime->month)
-            {
-                case MONTH_DEC:
-                case MONTH_MAR:
-                case MONTH_JUN:
-                case MONTH_SEP:
-                    AdvanceSeason();
-                default:
-                    break;
-            }
         }
         else
         {

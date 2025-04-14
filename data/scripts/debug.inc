@@ -136,11 +136,6 @@ Debug_EventScript_Text_OffensiveIVs:
 Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
-Debug_EventScript_AdvanceSeason::
-	callnative AdvanceSeason
-	release
-	end
-
 Debug_EventScript_DisplayTimeState::
 	callnative CheckTimeState
 	msgbox Debug_TimeState, MSGBOX_DEFAULT
@@ -185,6 +180,20 @@ Debug_EventScript_TimeRatioPrevious::
 	altertimeratioprevious
 	release
 	end
+
+Debug_EventScript_CalendarText::
+	callnative GetCalendarText
+	msgbox Debug_CalendarText, MSGBOX_DEFAULT
+	callnative GetSeasonText
+	msgbox Debug_SeasonText, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_CalendarText::
+	.string "Date is: {STR_VAR_1}, {STR_VAR_2}, {STR_VAR_3}$"
+
+Debug_SeasonText::
+	.string "Season is: {STR_VAR_1} {STR_VAR_2}$"
 
 Debug_CheckSaveBlock::
 	callnative CheckSaveBlock1Size
