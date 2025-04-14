@@ -8,6 +8,7 @@
 #include "event_data.h"
 #include "seasons.h"
 #include "script.h"
+#include "wallclock.h"
 
 void FakeRtc_Reset(void)
 {
@@ -87,19 +88,27 @@ void FakeRtc_SetAlteredTimeRatio_Previous(void)
     FakeRtc_ReturnToPreviousTimeRatio();
 }
 
-void FakeRtc_Pause(void)
+void FakeRtc_ForcePause(void)
 {
     FlagSet(FLAG_PAUSE_TIME);
 }
 
+void FakeRtc_Pause(void)
+{
+    if (IsWallClockSet())
+        FlagSet(FLAG_PAUSE_TIME);
+}
+
 void FakeRtc_Resume(void)
 {
-    FlagClear(FLAG_PAUSE_TIME);
+    if (IsWallClockSet())
+        FlagClear(FLAG_PAUSE_TIME);
 }
 
 void FakeRtc_Toggle(void)
 {
-    FlagToggle(FLAG_PAUSE_TIME);
+    if (IsWallClockSet())
+        FlagToggle(FLAG_PAUSE_TIME);
 }
 
 bool8 FakeRtc_IsPaused(void)
@@ -112,7 +121,7 @@ void FakeRtc_Init(s32 hour, s32 minute)
     RtcInitLocalTimeOffset(0, 0);
     FakeRtc_ManuallySetTime(0, hour, minute, 0);
     FakeRtc_SetAlteredTimeRatio_Standard();
-    FakeRtc_Pause();
+    FakeRtc_ForcePause();
 }
 
 void FakeRtc_TickTimeForward(void)
