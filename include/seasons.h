@@ -10,7 +10,8 @@
 #define SEASON_LENGTH_DEFAULT 10
 
 u8 GetSeason(void);
-u8 GetDayInSeason(void);
-u8 NextSeasonGet(u8 current_season);
+u8 GetDayInCurrentSeason(void);
+u8 GetDaysInSeason(u8 season);
+u8 GetDaysInCurrentSeason(void);
 
 #endif //GUARD_SEASONS_H

@@ -28,7 +28,7 @@ u8 GetSeason(void) {
     }
 }
 
-u8 GetDayInSeason(void) {
+u8 GetDayInCurrentSeason(void) {
     const enum Month currentMonth = GetMonth();
     u8 daysInSeason = GetDay();
     switch (GetSeason())
@@ -62,8 +62,8 @@ u8 GetDayInSeason(void) {
     return daysInSeason;
 }
 
-s32 DaysInSeason(u8 new_season) {
-    switch (new_season)
+u8 GetDaysInSeason(u8 season) {
+    switch (season)
     {
         case SEASON_SPRING:
             return GetDaysInMonth(MONTH_MAR)
@@ -86,9 +86,6 @@ s32 DaysInSeason(u8 new_season) {
     }
 }
 
-u8 NextSeasonGet(u8 current_season) {
-    current_season++;
-    if (current_season >= SEASONS_COUNT)
-        return SEASON_SPRING;
-    return current_season;
+u8 GetDaysInCurrentSeason(void) {
+    return GetDaysInSeason(GetSeason());
 }

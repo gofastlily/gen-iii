@@ -2329,50 +2329,51 @@ void GetSeasonText(void)
             break;
     }
 
-    ConvertIntToDecimalStringN(gStringVar2, GetDayInSeason(), STR_CONV_MODE_LEFT_ALIGN, 2);
+    ConvertIntToDecimalStringN(gStringVar2, GetDayInCurrentSeason(), STR_CONV_MODE_LEFT_ALIGN, 2);
+    ConvertIntToDecimalStringN(gStringVar3, GetDaysInCurrentSeason(), STR_CONV_MODE_LEFT_ALIGN, 2);
 }
 
 // *******************************
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_1);
- }
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_1);
+}
 
- static void DebugAction_Util_Script_2(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_2);
- }
+static void DebugAction_Util_Script_2(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_2);
+}
 
- static void DebugAction_Util_Script_3(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_3);
- }
+static void DebugAction_Util_Script_3(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_3);
+}
 
- static void DebugAction_Util_Script_4(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_4);
- }
+static void DebugAction_Util_Script_4(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_4);
+}
 
- static void DebugAction_Util_Script_5(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_5);
- }
+static void DebugAction_Util_Script_5(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_5);
+}
 
- static void DebugAction_Util_Script_6(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_6);
- }
+static void DebugAction_Util_Script_6(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_6);
+}
 
- static void DebugAction_Util_Script_7(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_7);
- }
+static void DebugAction_Util_Script_7(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_7);
+}
 
- static void DebugAction_Util_Script_8(u8 taskId)
- {
-     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_8);
- }
+static void DebugAction_Util_Script_8(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_8);
+}
 
 // *******************************
 // Actions Flags and Vars
