@@ -47,6 +47,7 @@
 #include "random.h"
 #include "region_map.h"
 #include "rtc.h"
+#include "seasons.h"
 #include "script.h"
 #include "script_pokemon_util.h"
 #include "sound.h"
@@ -137,7 +138,7 @@ enum PartyDebugMenu
 
 enum ScriptDebugMenu
 {
-    DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON,
+    DEBUG_UTIL_MENU_ITEM_DISPLAY_CALENDAR_TEXT,
     DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE,
     DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE,
     DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE,
@@ -322,7 +323,6 @@ static void Debug_InitDebugBattleData(void);
 static void Debug_RefreshListMenu(u8 taskId);
 static void Debug_RedrawListMenu(u8 taskId);
 
-static void DebugAction_Util_AdvanceSeason(u8 taskId);
 static void DebugAction_Util_FakeRtcToggle(u8 taskId);
 static void DebugAction_Util_FakeRtcPause(u8 taskId);
 static void DebugAction_Util_FakeRtcResume(u8 taskId);
@@ -331,6 +331,7 @@ static void DebugAction_Util_TimeRatioSlow(u8 taskId);
 static void DebugAction_Util_TimeRatioRealtime(u8 taskId);
 static void DebugAction_Util_TimeRatioPrevious(u8 taskId);
 static void DebugAction_Util_DisplayTimeState(u8 taskId);
+static void DebugAction_Util_DisplayCalendarText(u8 taskId);
 
 static void DebugAction_OpenUtilitiesMenu(u8 taskId);
 static void DebugAction_OpenPCBagMenu(u8 taskId);
@@ -459,7 +460,6 @@ extern const u8 Debug_EventScript_FontTest[];
 extern const u8 Debug_EventScript_CheckEVs[];
 extern const u8 Debug_EventScript_CheckIVs[];
 extern const u8 Debug_EventScript_InflictStatus1[];
-extern const u8 Debug_EventScript_AdvanceSeason[];
 extern const u8 Debug_EventScript_FakeRtcToggle[];
 extern const u8 Debug_EventScript_FakeRtcPause[];
 extern const u8 Debug_EventScript_FakeRtcResume[];
@@ -468,6 +468,7 @@ extern const u8 Debug_EventScript_TimeRatioSlow[];
 extern const u8 Debug_EventScript_TimeRatioRealtime[];
 extern const u8 Debug_EventScript_TimeRatioPrevious[];
 extern const u8 Debug_EventScript_DisplayTimeState[];
+extern const u8 Debug_EventScript_CalendarText[];
 extern const u8 DebugScript_DaycareMonsNotCompatible[];
 extern const u8 DebugScript_OneDaycareMons[];
 extern const u8 DebugScript_ZeroDaycareMons[];
@@ -623,7 +624,7 @@ static const struct ListMenuItem sDebugMenu_Items_Party[] =
 
 static const struct ListMenuItem sDebugMenu_Items_Scripts[] =
 {
-    [DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON]      = {COMPOUND_STRING("Advance Season"),      DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON},
+    [DEBUG_UTIL_MENU_ITEM_DISPLAY_CALENDAR_TEXT] = {COMPOUND_STRING("Show Date"), DEBUG_UTIL_MENU_ITEM_DISPLAY_CALENDAR_TEXT},
     [DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE]  = {COMPOUND_STRING("Display Time State"),  DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE},
     [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE]     = {COMPOUND_STRING("Fake RTC Toggle"),     DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE},
     [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE]      = {COMPOUND_STRING("Fake RTC Pause"),      DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE},
@@ -797,7 +798,7 @@ static void (*const sDebugMenu_Actions_Party[])(u8) =
 
 static void (*const sDebugMenu_Actions_Scripts[])(u8) =
 {
-    [DEBUG_UTIL_MENU_ITEM_ADVANCE_SEASON] = DebugAction_Util_AdvanceSeason,
+    [DEBUG_UTIL_MENU_ITEM_DISPLAY_CALENDAR_TEXT] = DebugAction_Util_DisplayCalendarText,
     [DEBUG_UTIL_MENU_ITEM_DISPLAY_TIME_STATE] = DebugAction_Util_DisplayTimeState,
     [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_TOGGLE] = DebugAction_Util_FakeRtcToggle,
     [DEBUG_UTIL_MENU_ITEM_FAKE_RTC_PAUSE] = DebugAction_Util_FakeRtcPause,
@@ -2170,13 +2171,92 @@ void CheckTimeState(void)
     }
 }
 
-// *******************************
-// Actions Scripts
-static void DebugAction_Util_AdvanceSeason(u8 taskId)
+void GetCalendarText(void)
 {
-    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_AdvanceSeason);
+    ConvertIntToDecimalStringN(gStringVar1, GetDay(), STR_CONV_MODE_RIGHT_ALIGN, 2);
+
+    static const u8 sJan[] = _("Jan");
+    static const u8 sFeb[] = _("Feb");
+    static const u8 sMar[] = _("Mar");
+    static const u8 sApr[] = _("Apr");
+    static const u8 sMay[] = _("May");
+    static const u8 sJun[] = _("Jun");
+    static const u8 sJul[] = _("Jul");
+    static const u8 sAug[] = _("Aug");
+    static const u8 sSep[] = _("Sep");
+    static const u8 sOct[] = _("Oct");
+    static const u8 sNov[] = _("Nov");
+    static const u8 sDec[] = _("Dec");
+    switch (GetMonth())
+    {
+        case MONTH_JAN:
+            StringCopy(gStringVar2, sJan);
+            break;
+        case MONTH_FEB:
+            StringCopy(gStringVar2, sFeb);
+            break;
+        case MONTH_MAR:
+            StringCopy(gStringVar2, sMar);
+            break;
+        case MONTH_APR:
+            StringCopy(gStringVar2, sApr);
+            break;
+        case MONTH_MAY:
+            StringCopy(gStringVar2, sMay);
+            break;
+        case MONTH_JUN:
+            StringCopy(gStringVar2, sJun);
+            break;
+        case MONTH_JUL:
+            StringCopy(gStringVar2, sJul);
+            break;
+        case MONTH_AUG:
+            StringCopy(gStringVar2, sAug);
+            break;
+        case MONTH_SEP:
+            StringCopy(gStringVar2, sSep);
+            break;
+        case MONTH_OCT:
+            StringCopy(gStringVar2, sOct);
+            break;
+        case MONTH_NOV:
+            StringCopy(gStringVar2, sNov);
+            break;
+        case MONTH_DEC:
+            StringCopy(gStringVar2, sDec);
+            break;
+    }
+
+    ConvertIntToDecimalStringN(gStringVar3, GetFullYear(), STR_CONV_MODE_RIGHT_ALIGN, 4);
 }
 
+void GetSeasonText(void)
+{
+    static const u8 sSpring[] = _("Spring");
+    static const u8 sSummer[] = _("Summer");
+    static const u8 sAutumn[] = _("Autumn");
+    static const u8 sWinter[] = _("Winter");
+    switch (GetSeason())
+    {
+        case SEASON_SPRING:
+            StringCopy(gStringVar1, sSpring);
+            break;
+        case SEASON_SUMMER:
+            StringCopy(gStringVar1, sSummer);
+            break;
+        case SEASON_AUTUMN:
+            StringCopy(gStringVar1, sAutumn);
+            break;
+        case SEASON_WINTER:
+            StringCopy(gStringVar1, sWinter);
+            break;
+    }
+
+    ConvertIntToDecimalStringN(gStringVar2, GetDayInSeason(), STR_CONV_MODE_LEFT_ALIGN, 2);
+}
+
+// *******************************
+// Actions Scripts
 static void DebugAction_Util_FakeRtcToggle(u8 taskId)
 {
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_FakeRtcToggle);
@@ -2215,6 +2295,11 @@ static void DebugAction_Util_TimeRatioPrevious(u8 taskId)
 static void DebugAction_Util_DisplayTimeState(u8 taskId)
 {
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_DisplayTimeState);
+}
+
+static void DebugAction_Util_DisplayCalendarText(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_CalendarText);
 }
 
 // *******************************

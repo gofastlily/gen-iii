@@ -541,10 +541,10 @@ static void ShowTimeWindow(void)
 
     AddTextPrinterParameterized(sStartClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm
 
-    StringExpandPlaceholders(gStringVar4, gSeasonNameStringsTable[VarGet(VAR_CURRENT_SEASON)]);
+    StringExpandPlaceholders(gStringVar4, gSeasonNameStringsTable[GetSeason()]);
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
 
-    ConvertIntToDecimalStringN(gStringVar4, DaysInSeasonGet() + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+    ConvertIntToDecimalStringN(gStringVar4, GetDayInSeason(), STR_CONV_MODE_LEFT_ALIGN, 2);
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - 12, 16, 0xFF, NULL); // print current day
 
     DisplayTimeOfDayIcon(GetTimeOfDay());

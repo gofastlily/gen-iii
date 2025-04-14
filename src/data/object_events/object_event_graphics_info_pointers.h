@@ -254,12 +254,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Daisy;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClerk;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Daisy;
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
-
-// Kanto misc event objects
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoTownMap;
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokedex;
 
 // Kanto misc event objects
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoTownMap;
